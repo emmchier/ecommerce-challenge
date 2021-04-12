@@ -3,7 +3,7 @@ import { ProductGrid } from './components/ProductGrid';
 
 export const App = () => {
 
-    const [categories, setCategories] = useState(['']);
+    const [categories, setCategories] = useState(['Indumentaria']);
 
     
 
@@ -12,15 +12,15 @@ export const App = () => {
             <h2>Ecommerce App</h2>
             <hr />
 
-            <ul>
+            <div>
                 {
                     categories.map( category => 
-                         <ProductGrid 
+                        <ProductGrid 
                             key={ category }
                             category={ category } />
                     )
                 }
-            </ul>
+            </div>
         </div>
     )
 }
