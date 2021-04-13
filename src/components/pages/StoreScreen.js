@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { ProductGrid } from './components/ProductGrid';
+import { ProductGrid } from '../ProductGrid';
 
-export const App = () => {
+export const StoreScreen = () => {
 
-    const [categories, setCategories] = useState(['Indumentaria']);
-
-    
+    const [categories, setCategories] = useState(['']);
 
     return (
         <div className="container">
-            <h2>Ecommerce App</h2>
+
             <hr />
 
             <div>

@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { RedeemUp } from './RedeemUp';
 
-import { App } from './App';
-
-import './index.css';
+import './styles/styles.scss';
 
 ReactDOM.render(
-    <App />,
+    <RedeemUp />,
   document.getElementById('root')
 );

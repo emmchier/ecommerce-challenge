@@ -1,0 +1,45 @@
+// main styles scss
+@import './base/settings';
+@import './base/base';
+
+// components
+@import './components/store';
+@import './components/navbar';
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  background-color: $backgroundBodyColor;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  width: 100%;
+}
+
+// helper classes
+.main-elevation {
+  -webkit-box-shadow: 0 8px 17px 2px rgba(26, 25, 25, 0.023), 0 3px 14px 2px rgba(0, 0, 0, 0.064), 0 5px 5px -3px rgba(0, 0, 0, 0.064) !important;
+  box-shadow: 0 8px 17px 2px rgba(26, 25, 25, 0.023), 0 3px 14px 2px rgba(0, 0, 0, 0.064), 0 5px 5px -3px rgba(0, 0, 0, 0.064) !important;
+}
+
+.no-elevation {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

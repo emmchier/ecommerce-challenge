@@ -1,0 +1,41 @@
+.store__product-card {
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: none;
+    border: none;
+    background-color: $whiteColor;
+    overflow: hidden;
+    display: flex;
+
+    p {
+        margin: 0;
+    }
+
+    .store__product-buy-icon {
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .store__product-card-data {
+        padding: 20px;
+
+        .store__product-card-img {
+            border-bottom: 1px solid $primaryLightColor;
+            margin-bottom: 20px;
+        }
+        
+        .store__product-card-category {
+            font-size: 16px;
+            color: $primaryColor;
+        }
+        
+        .store__product-card-title {
+            font-size: 18px;
+            color: $primaryDarkColor;
+        }
+
+    }
+
+}
