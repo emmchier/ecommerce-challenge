@@ -1,10 +1,20 @@
+.navbar {
+    background-color: $whiteColor;
+}
+
 .navbar__container-less {
-    width: 1400px;
+    width: 1320px;
     margin: 0 auto;
     padding: 0 20px;
 
     .nabvar__brand-logo {
         width: 35px;
+        padding: 15px 0;
     }
 
+}
+
+.nav-link {
+    position: absolute;
+    right: 30px;
 }

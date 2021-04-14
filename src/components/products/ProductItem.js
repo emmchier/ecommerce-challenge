@@ -1,6 +1,5 @@
 import React from 'react';
-import buyBlue from '../../src/buy-blue.svg';
-import buyWhite from '../../src/buy-white.svg';
+import buyBlue from '../../assets/buy-blue.svg';
 
 export const ProductItem = ({ id, category, name, img }) => {
 

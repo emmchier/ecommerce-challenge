@@ -1,3 +1,7 @@
+.store-screen {
+    padding-bottom: 40px;
+}
+
 .store__product-card {
     padding: 10px;
     margin-bottom: 25px;
@@ -16,6 +20,9 @@
         height: 45px;
         position: absolute;
         z-index: 1;
+        display: flex; 
+        justify-content: flex-end;
+        margin-right: auto;
     }
 
     .store__product-card-data {
@@ -39,3 +46,66 @@
     }
 
 }
+
+.store__user-points-container {
+
+   h2 {
+    font-size: 24px;
+    color: $primaryDarkColor;
+    margin-bottom: 0;
+    margin-right: 20px;
+   }
+
+   .coin-icon {
+       height: 35px;
+       transform: translateY(2px);
+       margin-left: 8px;
+   }
+}
+
+.store__pagination-container {
+    height: 100px;
+
+    p {
+        margin: 0 !important;
+    }
+}
+
+.store__counter-pager,
+.store__filter-container {
+    font-size: 24px;
+}
+
+.store__counter-pager {
+    color: $primaryDarkColor;
+    padding-right: 25px;
+}
+
+.pagination-bar {
+    margin-top: 50px;
+
+    hr {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+
+    .pagination-nav {
+        display: flex; 
+        justify-content: space-between;
+        margin-left: auto;
+    }
+}
+
+.store__filter-container {
+    color: $primaryColor;
+    border-left: 1px solid $primaryLightColor;
+
+    p {
+        padding: 0 25px;
+    }
+
+    button {
+        margin-right: 25px;
+    }
+}
+
