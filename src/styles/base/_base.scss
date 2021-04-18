@@ -85,5 +85,15 @@ button:focus,
     }
   }
 
+  .counter-points {
+    height: auto;
+    font-size: 24px;
+    background-color: $disableBackground;
+    border-radius: 25px !important;
+    border: none;
+    padding: 8px 25px 8px 25px !important;
+    color: $primaryColor;
+  }
+
   
 

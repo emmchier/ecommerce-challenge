@@ -1,31 +1,45 @@
 import React from 'react';
+import { CustomButton } from '../ui/CustomButton';
 
 export const FilterBar = () => {
+
+    const handleRecent = () => {
+      
+    };
+
+    const handleLowest = () => {
+       
+    };
+
+    const handleHighest = () => {
+       
+    };
 
     return (
         <div className="store__filter-container align-horizontal">
             <p>Sort by:</p>
 
-            <button 
-                className="btn btn-primary custom-btn hover-active"
-                // onClick={ }
-                >
-                Most recent
-            </button>
+            <CustomButton
+                key={ 'btnRecent' }
+                btnTitle={ 'Most Recent' }
+                isHover={ true }
+                onClick={ handleRecent }
+            />
 
-            <button 
-                className="btn btn-primary custom-btn hover-active"
-                // onClick={ }
-                >
-                Lowest price
-            </button>
+            <CustomButton
+                key={ 'btnLowest' }
+                btnTitle={ 'Lowest price' }
+                isHover={ true }
+                onClick={ handleLowest }
+            />
 
-            <button 
-                className="btn btn-primary custom-btn hover-active"
-                // onClick={ }
-                >
-                Highest price
-            </button>
+            <CustomButton
+                key={ 'btnHighest' }
+                btnTitle={ 'Highest price' }
+                isHover={ true }
+                onClick={ handleHighest }
+            />
+            
         </div>
     )
 }

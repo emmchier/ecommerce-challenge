@@ -2,6 +2,23 @@
     padding-bottom: 40px;
 }
 
+.store__product-redeem-content {
+    background-color: red;
+    position: absolute;
+    padding: 7.8px;
+    z-index: 9;
+
+    .store__product-buy-icon {
+        width: 54px;
+        height: 54px;
+        position: absolute;
+        z-index: 1;
+        display: flex; 
+        justify-content: flex-end;
+        margin-right: auto;
+    }
+}
+
 .store__product-card {
     padding: 10px;
     margin-bottom: 25px;
@@ -108,4 +125,5 @@
         margin-right: 25px;
     }
 }
+
 
