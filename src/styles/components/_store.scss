@@ -2,52 +2,56 @@
     padding-bottom: 40px;
 }
 
-.store__product-redeem-content {
-    background-color: red;
-    position: absolute;
-    padding: 7.8px;
-    z-index: 9;
+.product-card-container {
+    position: relative;
+    transition: .2s ease-in;
+    transform: translateY(0);
+    cursor: pointer;
+}
 
-    .store__product-buy-icon {
-        width: 54px;
-        height: 54px;
-        position: absolute;
-        z-index: 1;
-        display: flex; 
-        justify-content: flex-end;
-        margin-right: auto;
-    }
+.product-card-container.elevate:hover {
+    transition: .2s ease-in;
+    cursor: pointer;
+    transform: translateY(-10px);
+    -webkit-box-shadow: 
+        20px 24px 38px 3px rgba(0, 0, 0, 0), 
+        0 9px 46px 8px rgba(0, 0, 0, 0.12), 
+        0 11px 15px -7px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 
+        20px 24px 20px 10px rgba(0, 0, 0, 0.14), 
+        0 9px 46px 8px rgba(0, 0, 0, 0.12), 
+        0 11px 15px -7px rgba(0, 0, 0, 0.2) !important;
 }
 
 .store__product-card {
-    padding: 10px;
+    width: 100%;
     margin-bottom: 25px;
     border-radius: none;
     border: none;
     background-color: $whiteColor;
     overflow: hidden;
-    display: flex;
 
     p {
         margin: 0;
     }
 
-    .store__product-buy-icon {
-        width: 45px;
-        height: 45px;
-        position: absolute;
-        z-index: 1;
-        display: flex; 
-        justify-content: flex-end;
-        margin-right: auto;
+    .store__product-card-body {
+        padding: 20px 23px;
+
+        &:hover {
+            opacity: .2 !important;   
+        }
+    
     }
 
     .store__product-card-data {
-        padding: 20px;
+        width: 100%;
+        position: relative;
 
         .store__product-card-img {
+            width: 100%;
             border-bottom: 1px solid $primaryLightColor;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
         
         .store__product-card-category {
@@ -60,23 +64,174 @@
             color: $primaryDarkColor;
         }
 
-    }
+        .store__user-points-container {
+            position: absolute;
+            z-index: 9;
+            right: 0;
 
+            h2 {
+                font-size: 14px;
+                display: flex;
+                width: 100%;
+            }
+
+        }
+        .btn-see-more-container {
+            position: absolute;
+            bottom: 3px;
+            width: 100%;
+            height: 100%;
+            background-color: $whiteColor;
+            transition: .2s ease-in;
+            opacity: 0;
+
+            &:hover {
+                transition: .2s ease-in;
+                opacity: .8;
+            }
+
+            .btn-see-more {
+                text-decoration: none;
+                font-size: 18px;
+                text-align: center;
+                position: absolute;
+                bottom: 30px;
+                width: 100%;
+    
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 
-.store__user-points-container {
+.store__product-buy-icon {
+    width: 35px;
+    height: 35px;
+    margin: 12px;
+}
 
-   h2 {
-    font-size: 24px;
-    color: $primaryDarkColor;
-    margin-bottom: 0;
-    margin-right: 20px;
-   }
+.store__redeem-buy-icon {
+    width: 42px !important;
+    height: 42px !important;
+    margin: 8px;
+}
+
+.store__product-buy-icon,
+.store__redeem-buy-icon {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+}
+
+.store__product-redeem-content {
+    width: 100%;
+    height: 100%;
+    background-color: $secondaryColor;
+    background: linear-gradient(to top, $translucentSecondaryColor, $translucentPrimaryColor);
+    z-index: 9;
+    position: absolute;
+    
+    .store__redeem-card-data {
+        width: 100%;
+        bottom: 10px;
+
+        .redeem-points {
+            position: absolute;
+            bottom: 85px;
+            width: 100%;
+            padding: 0 30px;
+
+            .store__user-points-container {
+                color: $whiteColor;
+                   
+                h2 {
+                    font-size: 33px !important;
+                    margin-right: 8px;
+                }
+
+                .coin-icon {
+                   width: 28px;
+                }
+            }
+
+            .custom-btn {
+                width: 100%;
+                font-size: 18px;
+                background-color: $whiteColor;
+                color: $primaryDarkColor;
+
+                &:hover {
+                    color: $blackColor;
+                }
+            }
+
+        }
+        
+        .btn-see-more {
+            color: $whiteColor;
+            text-decoration: none;
+            font-size: 18px;
+            position: absolute;
+            height: 30px;
+            width: 100%;
+            text-align: center;
+            bottom: 30px;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+.store__product-card-data .store__user-points-container {
+    padding: 5px 10px !important;
+    background-color: $translucentDark;
+    margin: 12px;
+
+    h2 {
+        font-size: 24px;
+        color: $whiteColor;
+        margin-bottom: 0;
+        margin-right: 5px;
+        margin-left: 8px;
+    }
 
    .coin-icon {
-       height: 35px;
+       width: 28px;
+       height: 28px;
+       margin: 3px 2px;
        transform: translateY(2px);
-       margin-left: 8px;
+       
+   }
+}
+
+.navbar__user-points-container .store__user-points-container {
+    background-color: $disableBackground !important;
+    margin: 5px 0 !important;
+    padding-left: 15px !important;
+    padding-right: 10px !important;
+    cursor: pointer;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 0;
+        margin-right: 5px;
+        color: $primaryDarkColor;
+    }
+
+   .coin-icon {
+       width: 33px;
+       height: 33px;
+       margin: 3px 0;
+       transform: translateY(2px);
+   }
+
+   .custom-btn {
+       border: none !important;
    }
 }
 
@@ -125,5 +280,10 @@
         margin-right: 25px;
     }
 }
+
+
+
+
+
 
 
