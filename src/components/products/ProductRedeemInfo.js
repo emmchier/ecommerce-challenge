@@ -1,14 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { getReedem } from '../../api/service';
-
+import React, { useContext } from 'react';
+import { postReedem } from '../../api/service';
 import buyWhite from '../../assets/buy-white.svg';
+import { UserContext } from '../contexts/UserContext';
 import { CustomButton } from '../ui/CustomButton';
 import { CustomLinkButton } from '../ui/CustomLinkButton';
 import { Points } from '../user/Points';
 
 export const ProductRedeemInfo = ({ productId, category, productCost }) => {
 
+    const { user, setUser } = useContext(UserContext);
+
+    const { points } = user;
+
+    const handleRedeemProduct = () => {
+        const refreshPoints = points - productCost
+        setUser({ ...user, points: refreshPoints })
+        postReedem(productId)
+    };
    
     return (
         <>
@@ -27,7 +35,7 @@ export const ProductRedeemInfo = ({ productId, category, productCost }) => {
                         <CustomButton
                             btnTitle={ 'Redeem Now' }
                             isHover={ false }
-                            onClick={ ()=> {getReedem(productId)} }
+                            onClick={ ()=> { handleRedeemProduct() } }
                         />
                     </div>
                     <CustomLinkButton

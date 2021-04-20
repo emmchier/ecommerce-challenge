@@ -5,18 +5,21 @@ export const usePagination = () => {
 
     const { data } = useFetch();
 
-    const [ pagination ] = useState(1);
+    const [ page, setPage ] = useState(1);
 
-    let currentPage = pagination
-    const productPerPage = 16
+    let currentPage = page;
+    const productsByPage = 16;
 
-    const indexLastProduct = currentPage * productPerPage;
-    const indexFirstProduct = indexLastProduct - productPerPage;
-    const totalProducts = data.slice(indexFirstProduct, indexLastProduct);
+    const indexLastProduct = currentPage * productsByPage;
+    const indexFirstProduct = indexLastProduct - productsByPage;
+    const productList = data.slice(indexFirstProduct, indexLastProduct);
+
 
     return {
         currentPage,
-        productPerPage,
-        totalProducts
+        productsByPage,
+        productList,
+        setPage,
+        page
     };
 }

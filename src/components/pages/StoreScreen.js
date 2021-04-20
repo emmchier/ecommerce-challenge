@@ -26,6 +26,7 @@ export const StoreScreen = () => {
                 </div>
                 <Pagination />
             </div>
+        
         </section>
     )
 }

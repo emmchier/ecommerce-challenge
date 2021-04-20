@@ -209,32 +209,6 @@
    }
 }
 
-.navbar__user-points-container .store__user-points-container {
-    background-color: $disableBackground !important;
-    margin: 5px 0 !important;
-    padding-left: 15px !important;
-    padding-right: 10px !important;
-    cursor: pointer;
-
-    h2 {
-        font-size: 24px;
-        margin-bottom: 0;
-        margin-right: 5px;
-        color: $primaryDarkColor;
-    }
-
-   .coin-icon {
-       width: 33px;
-       height: 33px;
-       margin: 3px 0;
-       transform: translateY(2px);
-   }
-
-   .custom-btn {
-       border: none !important;
-   }
-}
-
 .store__pagination-container {
     height: 100px;
 

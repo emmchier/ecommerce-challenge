@@ -6,7 +6,7 @@ const TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDZlMjZiYjc2NmZi
 const GET_USER = `${ BASE_URL }/user/me`;
 const GET_PRODUCTS = `${ BASE_URL }/products`;
 const POST_POINTS = `${ BASE_URL }/user/points`;
-const GET_REDEEM = `${ BASE_URL }/redeem`;
+const POST_REDEEM = `${ BASE_URL }/redeem`;
 const GET_HISTORY = `${ BASE_URL }/user/history`;
 
 // headers
@@ -82,7 +82,7 @@ export const postPoints = async ( amount, userPoints, setUserPoints ) => {
     }
 };
 
-export const getReedem = async (productId) => {
+export const postReedem = async ( productId ) => {
 
     const param = JSON.stringify( { productId : productId } );
     const parameters = {
@@ -93,10 +93,10 @@ export const getReedem = async (productId) => {
     };
 
     try {
-        await fetch(GET_REDEEM, parameters);
+        await fetch(POST_REDEEM, parameters);
         return true;
     } catch (error) {
-        console.log('error get redeems', error);
+        console.log('error post redeems', error);
         return false;
     }
 };

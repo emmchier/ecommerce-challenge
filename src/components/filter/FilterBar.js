@@ -1,19 +1,16 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { FilterContext } from '../contexts/FilterContext';
 import { CustomButton } from '../ui/CustomButton';
 
 export const FilterBar = () => {
 
-    const handleRecent = () => {
-      
-    };
+    const { filter, setFilter } = useContext(FilterContext);
 
-    const handleLowest = () => {
-       
-    };
-
-    const handleHighest = () => {
-       
-    };
+    function handleFilterByType(type) {
+        const newData = { ...filter, price: type };
+        setFilter(newData);
+        console.log(filter);
+    }
 
     return (
         <div className="store__filter-container align-horizontal">
@@ -23,21 +20,21 @@ export const FilterBar = () => {
                 key={ 'btnRecent' }
                 btnTitle={ 'Most Recent' }
                 isHover={ true }
-                onClick={ handleRecent }
+                onClick={ ()=> { handleFilterByType('all') } }
             />
 
             <CustomButton
                 key={ 'btnLowest' }
                 btnTitle={ 'Lowest price' }
                 isHover={ true }
-                onClick={ handleLowest }
+                onClick={ ()=> { handleFilterByType('lowest') } }
             />
 
             <CustomButton
                 key={ 'btnHighest' }
                 btnTitle={ 'Highest price' }
                 isHover={ true }
-                onClick={ handleHighest }
+                onClick={ ()=> { handleFilterByType('highest') } }
             />
             
         </div>

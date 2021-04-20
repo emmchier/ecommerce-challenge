@@ -1,26 +1,38 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { postPoints } from '../../api/service';
 
 import brand from '../../assets/aerolab-logo.svg';
 import { UserContext } from '../contexts/UserContext';
 import { Points } from '../user/Points';
+import { Overlay } from './Overlay';
+import { SidenavAddPoints } from './SidenavAddPoints';
 
 export const Navbar = () => {
 
-    const { user } = useContext( UserContext );
-
-    const [amount, setAmount] = useState(1000);
-
+    const { user, setUser } = useContext( UserContext );
     const { name, points } = user;
 
-    const handleAddPoints = () => {
-        postPoints(amount, points, setAmount(amount));
+    const [ visibility, setVisibility ] = useState();
+
+    const [sidebar, setSidebar] = useState(false);
+
+    const showSidebar = () => setSidebar(!sidebar);
+
+    const handleSidenav = (visibility) => {
+        setVisibility(visibility);
+        
     };
     
-
     return (
         <>
+        <SidenavAddPoints 
+            isOpenSidenav={ visibility } 
+            onClickClose={ ()=> { handleSidenav(false) } }
+        />
+        <Overlay 
+            isOpenOverlay={ visibility }
+            onClickOverlay={ ()=> { handleSidenav(false) } } 
+        />
         <nav className="navbar fixed-top navbar-expand-md">
             <div className="navbar__container-less">
                 <div>
@@ -28,7 +40,8 @@ export const Navbar = () => {
                     <img 
                         src={ brand }
                         className="nabvar__brand-logo"
-                        alt="Aerolab Branding" />
+                        alt="Aerolab Branding" 
+                    />
                 </NavLink>
                 <NavLink className="navbar-brand" to="/my-history">HISTORY</NavLink>
                 </div>
@@ -40,7 +53,7 @@ export const Navbar = () => {
                     <Points 
                         points={ points }
                         isHover={ true }
-                        actionFab={ ()=> { handleAddPoints() } }
+                        actionFab={ ()=> { handleSidenav(true) } }
                     />
                 </div>
             </div>

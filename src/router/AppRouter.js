@@ -11,14 +11,14 @@ import { Navbar } from "../components/ui/Navbar";
 
 export const AppRouter = () => {
     return (
+        
         <Router>
-            <>
-                <Navbar />
-                <Switch>
-                    <Route exact path="/" component={ StoreScreen } />
-                    <Route exact path="/my-history" component={ UserHistoryScreen } />
-                </Switch>
-            </>
+            <Navbar />
+            <Switch>
+                <Route exact path="/" component={ StoreScreen } />
+                <Route exact path="/my-history" component={ UserHistoryScreen } />
+            </Switch>
         </Router>
+        
     )
 }

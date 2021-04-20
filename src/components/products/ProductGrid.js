@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useFetch } from '../../hooks/useFetch';
 import { usePagination } from '../../hooks/usePagination';
 import { ProductItem } from './ProductItem';
 
 export const ProductGrid = () => {
 
-    const { totalProducts } = usePagination();
+    const { productList } = usePagination();
+
     const { loading } = useFetch();
 
     return (    
@@ -14,9 +15,9 @@ export const ProductGrid = () => {
 
             <div className="row">
                 {
-                    totalProducts.map( prod => (
+                    productList.map( prod => (
                         <ProductItem
-                            key={ prod.id }
+                            key={ prod._id }
                             { ...prod }
                         />
                     ))
