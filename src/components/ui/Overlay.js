@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export const Overlay = ( { isOpenOverlay, onClickOverlay } ) => {
 
@@ -7,7 +7,7 @@ export const Overlay = ( { isOpenOverlay, onClickOverlay } ) => {
         {
             isOpenOverlay && 
             <div 
-                className="overlay"
+                className={ isOpenOverlay ? 'overlay active' : 'overlay' }
                 onClick={ onClickOverlay }
             >
 

@@ -4,15 +4,20 @@
     box-shadow: 2px 0px 5px rgba($color: $primaryDarkColor, $alpha: 5.0);
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     width: 25%;
     z-index: 99999 !important;
-    transition: .5s ease-in;
-    transform: translateX(0);
+    transition: all .5s;
+
+    &.active {
+        right: 0 !important;
+        transition: all .5s !important;
+    }
 
     .sidenav-header {
         height: 30vh;
         max-height: 30vh;
+        background: linear-gradient(to top right, $coinColor, $coinDegrade);
         background-color: $coinColor;
         position: relative;
 
@@ -22,29 +27,35 @@
             left: 0;
             padding: 20px;
 
+            h2 {
+                font-size: 25px;
+            }
+
             p {
                 margin-bottom: 10px;
                 font-size: 18px;
             }
 
         }
+        .store__user-points-container {
+            background-color: $primaryDarkColor !important;
+
+            h2 {
+                color: $whiteColor;
+            }
+        }
     
     }
 
-    &.close {
-        transition: .5s ease-in;
-        transform: translateX(100%);
-    }
-
-    .store__user-points-container{
-        background-color: $primaryDarkColor;
+    .store__user-points-container {
+        background-color: $disableBackground;
         padding: 2px 10px 2px 15px !important;
 
         h2 {
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 0;
             margin-right: 5px;
-            color: $whiteColor;
+            color: $blackColor;
         }
     
         .coin-icon {
@@ -60,6 +71,7 @@
         font-weight: 600;
         padding: 20px;
         margin: 0;
+        margin-top: 25px;
     }
     
     .btn-close-sidenav {
@@ -79,20 +91,37 @@
 
     .sidenav__btn-container {
         padding: 20px;
+        
+        .sidenav-coins-container {
+            margin-bottom: 20px;
+        }
+
+        .custom-fab-btn {
+            border: none;
+            background-color: $secondaryColor;
+            color: $whiteColor;
+            box-shadow: 2px 2px 8px rgba($color: $primaryLightColor, $alpha: 1);
+            transition: all .2s ease-in;
+
+            &:hover {
+                background-color: $secondaryDarkColor !important;
+                transition: all .2s ease-in;
+            }
+        }
     }
-
 }
-
-
-
-
 
 .overlay {
     width: 100vw;
     height: 100vh;
     background-color: $blackColor;
-    opacity: .5;
+    opacity: 0 !important;
     position: fixed;
     z-index: 9999 !important;
-    transition: .2s ease-in;
+    transition: all .5s !important;
+
+    &.active {
+        opacity: .5 !important;
+        transition: all .5s !important;
+    }
 }

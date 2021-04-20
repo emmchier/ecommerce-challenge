@@ -14,24 +14,18 @@ export const Navbar = () => {
 
     const [ visibility, setVisibility ] = useState();
 
-    const [sidebar, setSidebar] = useState(false);
-
-    const showSidebar = () => setSidebar(!sidebar);
-
-    const handleSidenav = (visibility) => {
-        setVisibility(visibility);
-        
-    };
+    const [showNav, setShowNav] = useState(false);
+    const showSidebar = () => setShowNav(!showNav);
     
     return (
         <>
         <SidenavAddPoints 
-            isOpenSidenav={ visibility } 
-            onClickClose={ ()=> { handleSidenav(false) } }
+            isOpenSidenav={ showNav } 
+            onClickClose={ ()=> { setShowNav(false) } }
         />
         <Overlay 
-            isOpenOverlay={ visibility }
-            onClickOverlay={ ()=> { handleSidenav(false) } } 
+            isOpenOverlay={ showNav }
+            onClickOverlay={ ()=> { setShowNav(false) } } 
         />
         <nav className="navbar fixed-top navbar-expand-md">
             <div className="navbar__container-less">
@@ -53,7 +47,7 @@ export const Navbar = () => {
                     <Points 
                         points={ points }
                         isHover={ true }
-                        actionFab={ ()=> { handleSidenav(true) } }
+                        actionFab={ ()=> { showSidebar() } }
                     />
                 </div>
             </div>

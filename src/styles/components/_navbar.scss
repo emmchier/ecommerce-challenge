@@ -43,4 +43,14 @@
    .custom-btn {
        border: none !important;
    }
+
+   .custom-fab-btn {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+
+        i {
+            transform: translateX(-5px);
+        }
+   }
 }

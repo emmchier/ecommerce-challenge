@@ -20,47 +20,44 @@ export const SidenavAddPoints = ( { isOpenSidenav, onClickClose } ) => {
 
     return (
         <>
-            {
-                isOpenSidenav && 
-                <div className="sidenav-points">
-                    <div className="sidenav-content">
-                        <div className="sidenav-header">
-                            <i className="btn-close-sidenav material-icons"
-                                onClick={ onClickClose }>
-                                close
-                            </i>
-                            <div className="sidenav-coins-container">
-                                <p>Your coins</p>
-                                <Points 
-                                    points={ points }
-                                    isHover={ false }
-                                />
-                            </div>
+            <div className={ isOpenSidenav ? 'sidenav-points active' : 'sidenav-points' }>
+                <div className="sidenav-content">
+                    <div className="sidenav-header">
+                        <i className="btn-close-sidenav material-icons"
+                            onClick={ onClickClose }>
+                            close
+                        </i>
+                        <div className="sidenav-coins-container">
+                            <p>Your coins</p>
+                            <Points 
+                                points={ points }
+                                isHover={ false }
+                            />
                         </div>
-                        <h3>Get more coins!</h3>
-                        <ul className="sidenav__btn-container">
-                            <li>
-                                <CustomAddButtons
-                                    pointsAdd={ '1000' }
-                                    onClickAdd={ ()=> { handleAddPoints(amount = 1000) } }
-                                />
-                            </li>
-                            <li>
-                                <CustomAddButtons
-                                    pointsAdd={ '5000' }
-                                    onClickAdd={ ()=> { handleAddPoints(amount = 5000) } }
-                                />
-                            </li>
-                            <li>
-                                <CustomAddButtons
-                                    pointsAdd={ '7500' }
-                                    onClickAdd={ ()=> { handleAddPoints(amount = 7500) } }
-                                />
-                            </li>
-                        </ul>
                     </div>
+                    <h3>Get more coins!</h3>
+                    <ul className="sidenav__btn-container">
+                        <li>
+                            <CustomAddButtons
+                                pointsAdd={ '1000' }
+                                onClickAdd={ ()=> { handleAddPoints(amount = 1000) } }
+                            />
+                        </li>
+                        <li>
+                            <CustomAddButtons
+                                pointsAdd={ '5000' }
+                                onClickAdd={ ()=> { handleAddPoints(amount = 5000) } }
+                            />
+                        </li>
+                        <li>
+                            <CustomAddButtons
+                                pointsAdd={ '7500' }
+                                onClickAdd={ ()=> { handleAddPoints(amount = 7500) } }
+                            />
+                        </li>
+                    </ul>
                 </div>
-            }
+            </div>
         </>
     )
 }
