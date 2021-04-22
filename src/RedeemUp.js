@@ -11,7 +11,7 @@ export const RedeemUp = () => {
 
     useEffect(() => {
         getUser(setUser);
-    }, [])
+    }, []);
 
     return (
 

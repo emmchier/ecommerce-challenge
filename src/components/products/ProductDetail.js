@@ -1,9 +1,30 @@
 import React from 'react';
 
-export const ProductDetail = () => {
+const ProductDetail = () => {
+
     return (
         <div>
-            <h2>Product Detail</h2>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            
+            <h2></h2>
         </div>
     )
+    
 }
+
+

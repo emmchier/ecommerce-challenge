@@ -1,9 +1,16 @@
 // global styles configuration
 * {
     @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
-    margin: 0px;
     font-weight: 300;
     transition: 0.2s ease-in !important;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 ul {

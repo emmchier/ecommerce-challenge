@@ -44,16 +44,19 @@ export const getProducts = async() => {
     try {
         const result = await fetch(GET_PRODUCTS, parameters);
         const data = await result.json();
+        console.log(data);
     
         const products = data.map( product => {
             return {
-                id: product._id,
-                name: product.name,
-                cost: product.cost,
-                category: product.category,
-                img: product.img?.url
+                productId: product._id,
+                productName: product.name,
+                productCost: product.cost,
+                productCategory: product.category,
+                productImg: product.img?.url,
+                productImgHd: product.img?.hdUrl
             }
         });
+        
         return products;
     } catch (error) {
         console.log('error products', error);
@@ -84,8 +87,8 @@ export const postPoints = async ( amount, userPoints, setUserPoints ) => {
 
 export const postReedem = async ( productId ) => {
 
-    const param = JSON.stringify( { productId : productId } );
-    const parameters = {
+    let param = JSON.stringify( { productId : productId } );
+    let parameters = {
         method: 'POST',
         headers: headers,
         body: param,

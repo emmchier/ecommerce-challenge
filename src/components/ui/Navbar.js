@@ -2,20 +2,23 @@ import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import brand from '../../assets/aerolab-logo.svg';
+import { useFetch } from '../../hooks/useFetch';
 import { UserContext } from '../contexts/UserContext';
+import { ShimmerAnimation } from '../skeletons/ShimmerAnimation';
+import { SkeletonElements } from '../skeletons/SkeletonElements';
 import { Points } from '../user/Points';
 import { Overlay } from './Overlay';
 import { SidenavAddPoints } from './SidenavAddPoints';
 
 export const Navbar = () => {
 
-    const { user, setUser } = useContext( UserContext );
+    const { user } = useContext( UserContext );
     const { name, points } = user;
-
-    const [ visibility, setVisibility ] = useState();
 
     const [showNav, setShowNav] = useState(false);
     const showSidebar = () => setShowNav(!showNav);
+
+    const { loading } = useFetch();
     
     return (
         <>
@@ -37,16 +40,23 @@ export const Navbar = () => {
                         alt="Aerolab Branding" 
                     />
                 </NavLink>
-                <NavLink className="navbar-brand" to="/my-history">HISTORY</NavLink>
                 </div>
             </div>
             
             <div className="nav-link">
                 <div className="navbar__user-points-container d-flex align-items-center">
-                    <h1> { name } </h1>
+                    {
+                        loading 
+                        ? 
+                        <div className="btn skeleton-name">
+                            <ShimmerAnimation />
+                        </div> : <h1> { name } </h1>
+                    }
+                    
                     <Points 
                         points={ points }
                         isHover={ true }
+                        setBack={ true }
                         actionFab={ ()=> { showSidebar() } }
                     />
                 </div>

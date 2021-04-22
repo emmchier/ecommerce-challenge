@@ -2,11 +2,13 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import { StoreScreen } from "../components/pages/StoreScreen";
 import { UserHistoryScreen } from "../components/pages/UserHistoryScreen";
+//import { ProductDetail } from "../components/products/ProductDetail";
 import { Navbar } from "../components/ui/Navbar";
 
 export const AppRouter = () => {
@@ -17,6 +19,9 @@ export const AppRouter = () => {
             <Switch>
                 <Route exact path="/" component={ StoreScreen } />
                 <Route exact path="/my-history" component={ UserHistoryScreen } />
+                {/* <Route exact path="/product/:productId" component={ ProductDetail } /> */}
+
+                <Redirect to="/" />
             </Switch>
         </Router>
         

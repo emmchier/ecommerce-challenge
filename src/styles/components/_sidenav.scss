@@ -109,6 +109,30 @@
             }
         }
     }
+
+    hr {
+        margin: 0 20px;
+    }
+
+    .sidenav-btn-history {
+        color: $primaryDarkColor;
+        text-decoration: none;
+        padding: 20px;
+        font-size: 18px;
+
+        p {
+            margin: 0;
+            
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+        i {
+            transform: translateY(2px) !important;
+        }
+    }
 }
 
 .overlay {

@@ -1,23 +1,39 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { postReedem } from '../../api/service';
 import buyWhite from '../../assets/buy-white.svg';
 import { UserContext } from '../contexts/UserContext';
 import { CustomButton } from '../ui/CustomButton';
-import { CustomLinkButton } from '../ui/CustomLinkButton';
+import { RedeemModal } from '../ui/RedeemModal';
 import { Points } from '../user/Points';
 
-export const ProductRedeemInfo = ({ productId, category, productCost }) => {
+export const ProductRedeemInfo = ( product ) => {
+
+    const {
+        productId,
+        productName, 
+        productCategory, 
+        productCost, 
+        productImg,
+        productImgHd
+    } = product;
 
     const { user, setUser } = useContext(UserContext);
 
     const { points } = user;
 
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () => {
+        setShowModal(prev => !prev);
+    };
+
     const handleRedeemProduct = () => {
         const refreshPoints = points - productCost
         setUser({ ...user, points: refreshPoints })
-        postReedem(productId)
+        postReedem( productId )
     };
-   
+
     return (
         <>
             <div className="store__product-redeem-content">
@@ -32,19 +48,34 @@ export const ProductRedeemInfo = ({ productId, category, productCost }) => {
                             points={ productCost }
                             setBack={ false }
                         />
-                        <CustomButton
-                            btnTitle={ 'Redeem Now' }
-                            isHover={ false }
-                            onClick={ ()=> { handleRedeemProduct() } }
-                        />
+                        {
+                            points < 0 
+                            ? console.log('add points')
+                            :  
+                            <button 
+                                className="btn btn-primary custom-btn"
+                                data-toggle="modal" 
+                                data-target="#exampleModal"
+                                onClick={ ()=> { handleRedeemProduct() }}
+                                >
+                                Redeem Now
+                            </button>
+                        }
                     </div>
-                    <CustomLinkButton
-                        to={'/my-history'}
-                        linkTitle={'See more'}
-                    />
+                    <Link className="btn-see-more" to={ `./product/${ productId }` }> See more </Link>
                 </div>
 
             </div>
+            {
+                showModal &&
+                <RedeemModal 
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                    productCost={ productCost }
+                    productName={ productName }
+                />
+            }
+            
         </>
     )
 }

@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { postPoints } from '../../api/service';
 import { UserContext } from '../contexts/UserContext';
 import { Points } from '../user/Points';
 import { CustomAddButtons } from './CustomAddButtons';
-import { CustomButton } from './CustomButton';
 
 export const SidenavAddPoints = ( { isOpenSidenav, onClickClose } ) => {
 
@@ -56,6 +56,14 @@ export const SidenavAddPoints = ( { isOpenSidenav, onClickClose } ) => {
                             />
                         </li>
                     </ul>
+                    <hr></hr>
+                    <Link 
+                        className="sidenav-btn-history d-flex align-items-center" 
+                        to="/my-history"
+                        onClick={ onClickClose }>
+                        <p>Check my history</p>
+                        <i class="material-icons">chevron_right</i>
+                    </Link>
                 </div>
             </div>
         </>
