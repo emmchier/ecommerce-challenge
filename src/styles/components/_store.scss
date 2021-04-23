@@ -76,6 +76,8 @@
             }
 
         }
+
+        
         .btn-see-more-container {
             position: absolute;
             bottom: 3px;
@@ -147,6 +149,25 @@
             bottom: 85px;
             width: 100%;
             padding: 0 30px;
+
+            .points-container {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+
+                .redeem-cost {
+                    color: $whiteColor;
+                    font-size: 35px;
+                    margin-bottom: 5px;
+                }
+
+                .coin-icon {
+                    width: 35px;
+                    height: 35px;
+                    margin-left: 5px;
+                    transform: translateY(11px);
+                }
+            }
 
             .store__user-points-container {
                 color: $whiteColor;
@@ -259,6 +280,74 @@
         margin-right: 25px;
     }
 }
+
+/* desk */
+@media only screen and (min-width: $deskXlMin) {
+  
+}
+/* desk notebook*/
+@media only screen and (min-width: $noteXlMin) and (max-width: $noteXlMax) {
+  
+}
+/* desk notebooks más chicas (marhis) */
+@media only screen and (min-width: $noteSmMin) and (max-width: $noteSmMax){
+  
+}
+/* tablet o iPad */
+@media only screen and (min-width: $tabletMin) and (max-width: $tabletMax) {
+
+}
+/* mobile */
+@media only screen and (max-width: $mobMax) {
+
+    .product-card-container.elevate:hover {
+        transition: none;
+        cursor: none;
+        transform: translateY(0);
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+    
+    .store__product-card {
+    
+        .store__product-card-body {
+    
+            &:hover {
+                opacity: none !important;   
+            }
+        
+        }
+    }
+
+    .btn-see-more-container {
+        opacity: 0;
+        display: none;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        .btn-see-more {
+            display: none !important;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+/* mobile iPhone 6 + iPhoneX */
+@media only screen and (min-width: iphoneXMin) and (max-width: iphoneXMax) {
+    
+}
+/* mobile MotoG4 + Galaxy S5 */
+@media only screen and (min-width: $galaxy5Min) and (max-width: $galaxy5Max) {
+    
+}   
+/* galaxy fold + iPhone 5*/
+@media only screen and (min-width: $galaxyMin) and (max-width: $galaxyMax) {
+    
+} 
 
 
 

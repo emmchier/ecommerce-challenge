@@ -11,12 +11,13 @@ export const ProductGrid = () => {
 
     return (    
         <>
+        
             { loading && <SkeletonGrid /> }
 
             <div className="row">
+                
                 {
                     productList.map( prod => (
-                
                             <ProductItem
                                 key={ prod.id }
                                 { ...prod }

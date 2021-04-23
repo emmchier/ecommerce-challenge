@@ -14,7 +14,7 @@ export const SidenavAddPoints = ( { isOpenSidenav, onClickClose } ) => {
 
     const handleAddPoints = (newAmount) => {
         const refresh = points + newAmount;
-        setUser({ points: refresh });
+        setUser({ ...user, points: refresh });
         postPoints(amount, points, amount);
     };
 

@@ -1,0 +1,90 @@
+
+
+/* desk */
+@media only screen and (min-width: $deskXlMin) {
+  
+}
+/* desk notebook*/
+@media only screen and (min-width: $noteXlMin) and (max-width: $noteXlMax) {
+  
+}
+/* desk notebooks más chicas (marhis) */
+@media only screen and (min-width: $noteSmMin) and (max-width: $noteSmMax){
+  
+}
+/* tablet o iPad */
+@media only screen and (min-width: $tabletMin) and (max-width: $tabletMax) {
+
+}
+/* mobile */
+@media only screen and (max-width: $mobMax) {
+    .btn-see-more,
+.btn-redeem-res {
+    width: 100%;
+}
+
+.btn-redeem-res {
+    margin: 20px 0;
+    background-color: $secondaryColor;
+    color: $whiteColor;
+}
+
+.btn-see-more {
+    text-align: center;
+    padding: 0 20px;
+    display: block;
+    color: $secondaryColor;
+    font-size: 20px;
+}
+.store__product-card-data  {
+    .points-container {
+        position: absolute;
+        z-index: 9;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 20px;
+
+        .redeem-cost {
+            font-size: 30px;
+            color: $primaryDarkColor;
+        }
+    
+        .coin-icon {
+            height: 30px;
+            width: 30px;
+            margin-left: 5px;
+            transform: translateY(3px);
+        }
+        
+    }
+    .store__product-buy-icon {
+        height: 45px;
+        width: 45px;
+    }
+    .store__product-card-body {
+        .store__product-card-img {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: none;
+        }
+    
+    }
+    
+}
+
+}
+/* mobile iPhone 6 + iPhoneX */
+@media only screen and (min-width: iphoneXMin) and (max-width: iphoneXMax) {
+    
+}
+/* mobile MotoG4 + Galaxy S5 */
+@media only screen and (min-width: $galaxy5Min) and (max-width: $galaxy5Max) {
+    
+}   
+/* galaxy fold + iPhone 5*/
+@media only screen and (min-width: $galaxyMin) and (max-width: $galaxyMax) {
+    
+} 
+ 
+

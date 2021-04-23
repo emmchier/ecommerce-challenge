@@ -1,27 +1,16 @@
 import React from 'react';
+import { useParams } from 'react-router';
 
-const ProductDetail = () => {
+export const ProductDetail = () => {
+
+    const { productId } = useParams();
+
+    console.log(productId);
 
     return (
         <div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            
-            <h2></h2>
+           
+            <h2>{ productId }</h2>
         </div>
     )
     

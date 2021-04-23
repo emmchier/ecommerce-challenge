@@ -1,3 +1,4 @@
+
 import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -40,6 +41,7 @@ export const Navbar = () => {
                         alt="Aerolab Branding" 
                     />
                 </NavLink>
+               
                 </div>
             </div>
             
@@ -52,13 +54,12 @@ export const Navbar = () => {
                             <ShimmerAnimation />
                         </div> : <h1> { name } </h1>
                     }
-                    
-                    <Points 
-                        points={ points }
-                        isHover={ true }
-                        setBack={ true }
-                        actionFab={ ()=> { showSidebar() } }
-                    />
+                        <Points 
+                            points={ points }
+                            isHover={ true }
+                            setBack={ true }
+                            actionFab={ ()=> { showSidebar() } }
+                        />
                 </div>
             </div>
         </nav>

@@ -1,10 +1,9 @@
 import React from 'react'
 import { useFetch } from '../../hooks/useFetch';
-import { usePagination } from '../../hooks/usePagination';
 
 export const GetProductById = ( id ) => {
 
-    const { productList } = usePagination();
+    const { data } = useFetch();
     
-    return productList.find( product => product.id === id );
+    return data.find( product => product.id === id );
 }

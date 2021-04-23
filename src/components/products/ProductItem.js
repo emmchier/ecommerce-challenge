@@ -1,13 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import buyBlue from '../../assets/buy-blue.svg';
-import { ProductContext } from '../contexts/ProductContext';
 import { UserContext } from '../contexts/UserContext';
-import { RedeemModal } from '../ui/RedeemModal';
 import { Points } from '../user/Points';
 import { ProductRedeemInfo } from './ProductRedeemInfo';
+import { useMediaQuery } from 'react-responsive';
+import { CustomButton } from '../ui/CustomButton';
+import { CustomRedeemBtn } from '../ui/CustomRedeemBtn';
+import { redeemProduct } from '../../actions/redeemProduct';
+import { CustomLinkBtn } from '../ui/CustomLinkBtn';
+import coin from '../../assets/icons/coin.svg';
+import RedeemDialog from '../ui/RedeemDialog';
 
-export const ProductItem = ( product ) => {
+export const ProductItem = ( props ) => {
 
     const {
         productId, 
@@ -16,11 +21,13 @@ export const ProductItem = ( product ) => {
         productImg, 
         productImgHd,
         productCost
-    } = product;
+    } = props;
+
+    const isMobile = useMediaQuery({ query: `(min-width: 760px)` });
 
     const [isHover, setIsHover] = useState(false);
 
-    const { user } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
 
     const { points: userPoints } = user;
     
@@ -40,18 +47,30 @@ export const ProductItem = ( product ) => {
                 ? "product-card-container"
                 : "product-card-container elevate"
             }>
-                    { isHover && 
-                    <ProductRedeemInfo 
-                        productId={ productId }
-                        productCost={ productCost }
-                        productName={ productName } /> 
-                    }
+                {
+                    isMobile && isHover && 
+                        <ProductRedeemInfo 
+                            productId={ productId }
+                            productCost={ productCost }
+                            productName={ productName }
+                            productImg={ productImg }
+                            productImgHd={ productImgHd } /> 
+                        
+                }
+                    
                 <div className="
                     store__product-card 
                     main-elevation 
                     animate__animated 
                     animate__fadeIn">
                     <div className="store__product-card-data">
+                        {
+                            !isMobile &&
+                            <div className="points-container">
+                                <p className="redeem-cost"> { productCost } </p>
+                                <img src={ coin } className="coin-icon" alt="coin icon"/>
+                            </div>
+                        }
                     {
                         productCost > userPoints ? 
                         <Points points={ `You need ${ productCost - userPoints }` } /> : 
@@ -88,13 +107,36 @@ export const ProductItem = ( product ) => {
                             animate__delay-0.8s"> 
                             { productName } 
                         </p>
+                        {   
+                        !isMobile &&
+                        <>
+                        <div classes="footer-actions-container">
+                            <RedeemDialog
+                                productId={ productId }
+                                productCost={ productCost }
+                                productName={ productName }
+                                productImg={ productImg }
+                                productImgHd={ productImgHd }
+                                clasess={ 'btn-redeem-res' }
+                            />
+                            {/* <CustomRedeemBtn 
+                                classes={ 'btn-redeem-res' } 
+                                onClick={ ()=> { 
+                                    redeemProduct() } } 
+                            /> */}
+                            <CustomLinkBtn productId={ productId } />
+                        </div>
+                        
+                        </>
+                    }
                     </div>
                     <div className="btn-see-more-container">
-                        <Link 
-                            className="btn-see-more" 
-                            to={ `./product/${ productId }` }> See more </Link>
+                        <CustomLinkBtn productId={ productId } />
                     </div>
+                    
+                    
                     </div>
+                    
                 </div>
             </div>
             

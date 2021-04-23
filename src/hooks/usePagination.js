@@ -5,7 +5,7 @@ export const usePagination = () => {
 
     const { data } = useFetch();
 
-    const [ page, setPage ] = useState(1);
+    const [ page, setPage ] = useState(2);
 
     let currentPage = page;
     const productsByPage = 16;

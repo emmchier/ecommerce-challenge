@@ -1,3 +1,4 @@
+import { Tooltip } from '@material-ui/core';
 import React, { useState } from 'react';
 
 import coin from '../../assets/icons/coin.svg';
@@ -13,7 +14,8 @@ export const Points = ({ points, setBack, isHover, actionFab }) => {
     const { loading } = useFetch();
 
     return (
-        <div 
+        
+      <div 
             className={
                 background ?
                 "store__user-points-container counter-points full-rounded no-elevation d-flex align-items-center"
@@ -30,12 +32,17 @@ export const Points = ({ points, setBack, isHover, actionFab }) => {
                 <img src={ coin } className="coin-icon" alt="coin icon"/>
                 {
                     showAdd && 
+                   
                     <CustomFAB 
                         iconName={ 'add' } 
                         onClickFab={ actionFab }
                     />
+                    
+                   
                 }
                 
         </div>
+ 
+        
     )
 }

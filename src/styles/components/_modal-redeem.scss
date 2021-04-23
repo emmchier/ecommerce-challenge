@@ -1,50 +1,74 @@
-.modal-redeem {
-    padding: 50px;
-    border: none;
-    border-radius: 10px;
+.redeem-modal-close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px;
+    margin: 20px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
 
-    .container-points {
-        margin-bottom: 25px;
+    &:hover {
+        background-color: $primaryLightColor;
     }
+}
 
-    .custom-btn {
-        background-color: $secondaryColor;
+.redeem-modal-title {
+    font-weight: 600;
+    font-size: 30px;
+    margin-right: 100px;
+}
+
+.redeem-modal-cost {
+    font-size: 38px;
+    color: $primaryDarkColor;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.redeem-modal-unity {
+    font-weight: 500;
+    font-size: 25px;
+    color: $primaryDarkColor;
+    transform: translateY(15px);
+}
+
+.redeem-modal-coin {
+    width: 45px;
+    height: 45px;
+    transform: translateY(3px);
+    margin: 0 10px;
+}
+
+.redeem-modal-product-name {
+    font-weight: 500;
+}
+
+.redeem-modal-action {
+    background-color: $secondaryColor;
+    color: $whiteColor;
+    margin: 20px;
+
+    &:hover {
+        background-color: $secondaryDarkColor;
         color: $whiteColor;
     }
+}
 
-    .modal-cost {
-        font-size: 45px;
-        color: $primaryDarkColor;
-    }
+.btn-product-redeem {
+    text-transform: initial !important;
+    font-weight: 500 !important;
+}
 
-    h2 {
-        margin-top: 30px;
-        margin-bottom: 0;
-    }
+.redeem-modal-buy-blue {
+    left: 0;
+    height: 50px;
+    width: 50px;
+    position: relative;
+}
 
-    h3 {
-        font-weight: 600;
-        font-size: 40px;
-    }
-
-    .modal-unity {
-        font-size: 25px;
-        color: $primaryDarkColor;
-        transform: translateY(5px);
-    }
-
-    .coin-icon {
-        width: 45px;
-        height: 45px;
-        transform: translateY(3px);
-        margin: 0 10px;
-    }
-
-    .btn-close-redeem {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 30px;
-        cursor: pointer;
-    }
+.redeem-modal-img {
+    max-height: 300px;
+    width: 100%;
 }

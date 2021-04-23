@@ -1,13 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { postReedem } from '../../api/service';
 import buyWhite from '../../assets/buy-white.svg';
 import { UserContext } from '../contexts/UserContext';
-import { CustomButton } from '../ui/CustomButton';
-import { RedeemModal } from '../ui/RedeemModal';
-import { Points } from '../user/Points';
+import coin from '../../assets/icons/coin.svg';
+import RedeemDialog from '../ui/RedeemDialog';
+import { CustomLinkBtn } from '../ui/CustomLinkBtn';
 
-export const ProductRedeemInfo = ( product ) => {
+export const ProductRedeemInfo = ( props ) => {
 
     const {
         productId,
@@ -16,23 +15,13 @@ export const ProductRedeemInfo = ( product ) => {
         productCost, 
         productImg,
         productImgHd
-    } = product;
+    } = props;
 
-    const { user, setUser } = useContext(UserContext);
+    console.log(productImgHd);
+
+    const { user } = useContext(UserContext);
 
     const { points } = user;
-
-    const [showModal, setShowModal] = useState(false);
-
-    const openModal = () => {
-        setShowModal(prev => !prev);
-    };
-
-    const handleRedeemProduct = () => {
-        const refreshPoints = points - productCost
-        setUser({ ...user, points: refreshPoints })
-        postReedem( productId )
-    };
 
     return (
         <>
@@ -43,39 +32,30 @@ export const ProductRedeemInfo = ( product ) => {
                     alt="buy blue icon"
                 />
                 <div className="store__redeem-card-data">
+                    
                     <div className="redeem-points">
-                        <Points 
-                            points={ productCost }
-                            setBack={ false }
-                        />
+                        <div className="points-container">
+                            <p className="redeem-cost"> { productCost } </p>
+                            <img src={ coin } className="coin-icon" alt="coin icon"/>
+                        </div>
                         {
                             points < 0 
                             ? console.log('add points')
                             :  
-                            <button 
-                                className="btn btn-primary custom-btn"
-                                data-toggle="modal" 
-                                data-target="#exampleModal"
-                                onClick={ ()=> { handleRedeemProduct() }}
-                                >
-                                Redeem Now
-                            </button>
+                            <RedeemDialog
+                                productId={ productId }
+                                productCost={ productCost }
+                                productName={ productName }
+                                productImg={ productImg }
+                                productImgHd={ productImgHd }
+                            />
                         }
                     </div>
-                    <Link className="btn-see-more" to={ `./product/${ productId }` }> See more </Link>
+                    <CustomLinkBtn productId={ productId } />
                 </div>
+                
 
             </div>
-            {
-                showModal &&
-                <RedeemModal 
-                    showModal={showModal}
-                    setShowModal={setShowModal}
-                    productCost={ productCost }
-                    productName={ productName }
-                />
-            }
-            
         </>
     )
 }

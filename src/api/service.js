@@ -52,8 +52,8 @@ export const getProducts = async() => {
                 productName: product.name,
                 productCost: product.cost,
                 productCategory: product.category,
-                productImg: product.img?.url,
-                productImgHd: product.img?.hdUrl
+                productImg: product.img.url,
+                productImgHd: product.img.hdUrl
             }
         });
         
