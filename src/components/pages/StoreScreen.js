@@ -7,16 +7,23 @@ export const StoreScreen = () => {
     const [categories, setCategories] = useState(['']);
 
     return (
-        <section className="store-screen">
+        <>
+        <section className="store-screen animate__animated animate__fadeIn">
             <header>
                 <div className="container">
-                    <h1>Electronics</h1>
+                    <h1 
+                        className="
+                            animate__animated 
+                            animate__fadeInUp">
+                        Electronics
+                    </h1>
                 </div>
             </header>
             <div className="container">
                 <Pagination isVisible={true} />
                 <div>
                     {
+                        
                         categories.map( category => 
                             <ProductGrid 
                                 key={ category }
@@ -27,7 +34,7 @@ export const StoreScreen = () => {
                 <Pagination />
                 
             </div>
-        
         </section>
+        </>
     )
 }

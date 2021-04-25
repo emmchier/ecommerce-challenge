@@ -1,14 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { postPoints } from '../../api/service';
 import { UserContext } from '../contexts/UserContext';
 import { Points } from '../user/Points';
 import { CustomAddButtons } from './CustomAddButtons';
+import { useMediaQuery } from 'react-responsive';
 
 export const SidenavAddPoints = ( { isOpenSidenav, onClickClose } ) => {
 
     const { user, setUser } = useContext( UserContext );
-    const { points } = user;
+    const { name, points } = user;
+    const isMobile = useMediaQuery({ query: `(min-width: 760px)` });
 
     let amount = 0;
 
@@ -28,6 +30,11 @@ export const SidenavAddPoints = ( { isOpenSidenav, onClickClose } ) => {
                             close
                         </i>
                         <div className="sidenav-coins-container">
+                            {
+                                !isMobile &&
+                                <h2 className="sidenav-user-name">{ name } </h2>
+                            }
+                            
                             <p>Your coins</p>
                             <Points 
                                 points={ points }

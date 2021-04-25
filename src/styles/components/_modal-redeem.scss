@@ -1,3 +1,7 @@
+.redeem-modal-main-container {
+    padding: 30px;
+}
+
 .redeem-modal-close-icon {
     position: absolute;
     top: 0;
@@ -21,7 +25,7 @@
 }
 
 .redeem-modal-cost {
-    font-size: 38px;
+    font-size: 30px;
     color: $primaryDarkColor;
     font-weight: 500;
     margin-bottom: 0;
@@ -29,26 +33,34 @@
 
 .redeem-modal-unity {
     font-weight: 500;
-    font-size: 25px;
+    font-size: 18px;
     color: $primaryDarkColor;
-    transform: translateY(15px);
+    transform: translateY(12px);
 }
 
 .redeem-modal-coin {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     transform: translateY(3px);
     margin: 0 10px;
 }
 
 .redeem-modal-product-name {
     font-weight: 500;
+    font-size: 26px;
+    color: $blackColor;
+}
+.redeem-modal-product-category {
+    font-weight: thin;
+    font-size: 20px;
 }
 
 .redeem-modal-action {
     background-color: $secondaryColor;
     color: $whiteColor;
-    margin: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 20px;
 
     &:hover {
         background-color: $secondaryDarkColor;
@@ -72,3 +84,62 @@
     max-height: 300px;
     width: 100%;
 }
+
+/* desk */
+@media only screen and (min-width: $deskXlMin) {
+  
+}
+/* desk notebook*/
+@media only screen and (min-width: $noteXlMin) and (max-width: $noteXlMax) {
+  
+}
+/* desk notebooks más chicas (marhis) */
+@media only screen and (min-width: $noteSmMin) and (max-width: $noteSmMax){
+  
+}
+/* tablet o iPad */
+@media only screen and (min-width: $tabletMin) and (max-width: $tabletMax) {
+
+}
+/* mobile */
+@media only screen and (max-width: $mobMax) {
+    .redeem-modal-main-container {
+        padding: 10px !important;
+        margin-top: 30px;
+    }
+    .redeem-modal-img {
+        max-height: 300px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .redeem-modal-buy-blue {
+        left: 0;
+        height: 45px;
+        width: 45px;
+        position: relative;
+        margin: 0;
+    }
+    .redeem-modal-title {
+        font-weight: 600;
+        font-size: 25px !important;
+        margin-right: 0;
+        margin-left: 15px;
+        transform: translateY(3px);
+    }
+    .redeem-modal-action {
+        background-color: $secondaryColor !important;
+        color: $whiteColor !important;
+    }
+}
+/* mobile iPhone 6 + iPhoneX */
+@media only screen and (min-width: iphoneXMin) and (max-width: iphoneXMax) {
+    
+}
+/* mobile MotoG4 + Galaxy S5 */
+@media only screen and (min-width: $galaxy5Min) and (max-width: $galaxy5Max) {
+    
+}   
+/* galaxy fold + iPhone 5*/
+@media only screen and (min-width: $galaxyMin) and (max-width: $galaxyMax) {
+    
+} 

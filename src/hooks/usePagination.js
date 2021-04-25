@@ -5,21 +5,22 @@ export const usePagination = () => {
 
     const { data } = useFetch();
 
-    const [ page, setPage ] = useState(2);
-
-    let currentPage = page;
+    const [currentPage, setCurrentPage] = useState(1);
     const productsByPage = 16;
 
-    const indexLastProduct = currentPage * productsByPage;
-    const indexFirstProduct = indexLastProduct - productsByPage;
-    const productList = data.slice(indexFirstProduct, indexLastProduct);
+    function refreshPage(number) {
+        const indexLastProduct = (number) * productsByPage;
+        const indexFirstProduct = indexLastProduct - productsByPage;
+        const list = data.slice(indexFirstProduct, indexLastProduct);
+        return list;
+    }
 
+    let productList = refreshPage(currentPage);
 
     return {
-        currentPage,
         productsByPage,
         productList,
-        setPage,
-        page
+        currentPage,
+        setCurrentPage
     };
 }

@@ -99,6 +99,7 @@
                 position: absolute;
                 bottom: 30px;
                 width: 100%;
+                font-weight: 700 !important;
     
                 &:hover {
                     text-decoration: underline;
@@ -313,7 +314,7 @@
         .store__product-card-body {
     
             &:hover {
-                opacity: none !important;   
+                opacity: 1 !important;   
             }
         
         }
@@ -335,6 +336,145 @@
             }
         }
     }
+
+    .store__product-buy-icon,
+    .store__redeem-buy-icon {
+        right: 0 !important;
+        width: 50px !important;
+    }
+
+    .owl-theme {
+        position: relative;
+        .item {
+            padding: 10px;
+        }
+
+        .owl-nav {
+            position: absolute;
+            top: 35%;
+            width: 100%;
+
+            .owl-prev,
+            .owl-next {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background-color: $whiteColor !important;
+                border-radius: 50%;
+                opacity: 1 !important;
+                -webkit-box-shadow: 0 8px 17px 2px rgba(26, 25, 25, 0.023), 0 3px 14px 2px rgba(0, 0, 0, 0.064), 0 5px 5px -3px rgba(0, 0, 0, 0.064) !important;
+                box-shadow: 0 8px 17px 2px rgba(26, 25, 25, 0.023), 0 3px 14px 2px rgba(0, 0, 0, 0.064), 0 5px 5px -3px rgba(0, 0, 0, 0.064) !important;
+        
+                span {
+                    font-size: 40px;
+                    line-height: 28px;
+
+                    
+                }
+            }
+
+                    & [class*='owl-']:hover,
+                    &:active,
+                    &:focus {
+                        opacity: 1 !important;
+                        color: $primaryDarkColor !important;
+                    }
+
+            .owl-prev {
+                left: 0;
+                transform: translateX(-10px);
+            }
+
+            .owl-next {
+                right: 0;
+                transform: translateX(10px);
+            }
+        }
+
+        
+    }
+    .pagination-bar {
+        margin-top: 0;
+
+        .store__pagination-container {
+            height: auto;
+            margin: 10px 0;
+            
+        
+            p {
+                font-size: 20px;
+                padding-right: 5px;
+            }
+        }
+
+        hr {
+            margin-bottom: 20px;
+        }
+
+    }
+
+    .store__counter-pager span {
+        display: none;
+    }
+
+    .pagination-nav {
+        .custom-fab-btn {
+            height: 40px !important;
+            width: 40px !important;
+    
+            i {
+                transform: translateX(-5px) translateY(-4px);
+            }
+        }
+    }
+
+    .MuiFormControl-root {
+        border-bottom: none !important;
+        border-left: 1px solid $primaryColor !important;
+        padding-left: 8px !important;
+    }
+    .MuiInput-underline:after,
+    .MuiInput-underline:before {
+        border-bottom: none !important;
+    }
+
+    .MuiInputBase-root {
+        margin-top: 0 !important;
+        width: 100% !important;
+    }
+    .MuiInput-input {
+        font-weight: 500 !important;
+        font-family: 'Source Sans Pro', sans-serif !important;
+        border-radius: 20%;
+        font-size: 20px !important;
+        color: $primaryColor !important;
+        padding-right: 30px !important;
+    }
+    .MuiSelect-select {
+        padding-bottom: 0 !important;
+    }
+    .MuiSelect-select:focus {
+        background-color: transparent !important;
+        color: $primaryDarkColor !important;
+    }
+
+    .MuiListItem-root.Mui-selected, 
+    .MuiListItem-root.Mui-selected:hover {
+        background-color: $selectBackground;
+    }
+
+    .MuiListItem-button {
+        font-weight: 100px !important;
+    }
+
+    
+}
+
+
+
+.selected {
+    background-color: $secondaryColor;
+    color: $whiteColor;
 }
 /* mobile iPhone 6 + iPhoneX */
 @media only screen and (min-width: iphoneXMin) and (max-width: iphoneXMax) {

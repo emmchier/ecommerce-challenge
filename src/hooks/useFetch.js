@@ -6,7 +6,7 @@ export const useFetch = () => {
     const [state, setState] = useState({
         data: [],
         loading: true
-    })
+    });
 
     useEffect( ()=> {
         getProducts()
@@ -16,7 +16,7 @@ export const useFetch = () => {
                     loading: false
                 });
             })
-    }, [])
+    }, []);
 
     return state;
 

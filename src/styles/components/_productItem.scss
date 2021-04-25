@@ -1,4 +1,65 @@
+.btn-see-more-container {
+    position: relative;
 
+    .MuiButtonBase-root {
+        position: absolute !important;
+        bottom: 25px;
+        justify-content: center;
+        width: 100%;
+        font-size: 14px;
+
+        &:hover {
+            background-color: transparent !important;
+        }        
+    }
+    
+    .MuiButton-label {
+        font-weight: 500;
+        text-transform: initial;
+        color: $primaryDarkColor;
+
+        &:hover {
+            background-color: transparent !important;
+            text-decoration: underline;
+        }
+
+        
+    }
+
+    
+}
+
+.btn-see-more-redeem {
+    position: relative;
+    
+
+    .MuiButtonBase-root {
+        position: relative !important;
+        justify-content: center;
+        width: 100%;
+        font-size: 16px;
+        padding: 0 !important;
+      
+
+        &:hover {
+            background-color: transparent !important;
+        }        
+    }
+    
+    .MuiButton-label {
+        font-weight: 500 !important;
+        text-transform: initial;
+        color: $whiteColor;
+        
+
+        &:hover {
+            background-color: transparent !important;
+            text-decoration: underline;
+        }
+
+        
+    }
+}
 
 /* desk */
 @media only screen and (min-width: $deskXlMin) {
@@ -18,7 +79,7 @@
 }
 /* mobile */
 @media only screen and (max-width: $mobMax) {
-    .btn-see-more,
+.btn-see-more,
 .btn-redeem-res {
     width: 100%;
 }
@@ -69,6 +130,38 @@
             border-bottom: none;
         }
     
+    }
+
+    .btn-see-more-res {
+       
+    
+        .MuiButtonBase-root {
+            position: relative !important;
+            bottom: 5px;
+            transform: translateX(0) !important;
+            width: 100%;
+            justify-content: center;
+    
+            &:hover {
+                background-color: transparent !important;
+            }        
+        }
+        
+        .MuiButton-label {
+            font-weight: 500;
+            font-size: 20px;
+            text-transform: initial;
+            color: $primaryDarkColor;
+            //text-decoration: underline;
+    
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: transparent !important;
+            }
+    
+            
+        }
     }
     
 }

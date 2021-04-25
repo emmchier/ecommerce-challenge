@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
 import buyWhite from '../../assets/buy-white.svg';
 import { UserContext } from '../contexts/UserContext';
 import coin from '../../assets/icons/coin.svg';
 import RedeemDialog from '../ui/RedeemDialog';
-import { CustomLinkBtn } from '../ui/CustomLinkBtn';
+import DetailDialog from '../ui/DetailDialog';
+
 
 export const ProductRedeemInfo = ( props ) => {
 
@@ -22,6 +22,8 @@ export const ProductRedeemInfo = ( props ) => {
     const { user } = useContext(UserContext);
 
     const { points } = user;
+
+    const { showSnack, setShowSnack } = useState(false);
 
     return (
         <>
@@ -48,13 +50,26 @@ export const ProductRedeemInfo = ( props ) => {
                                 productName={ productName }
                                 productImg={ productImg }
                                 productImgHd={ productImgHd }
+                                productCategory={ productCategory }
+                                setShowSnack={ setShowSnack }
                             />
                         }
                     </div>
-                    <CustomLinkBtn productId={ productId } />
+                    <div className="btn-see-more">
+                        <div className="btn-see-more-redeem">
+                            <DetailDialog 
+                                productId={ productId }
+                                productCost={ productCost }
+                                productName={ productName }
+                                productImg={ productImg }
+                                productImgHd={ productImgHd }
+                                productCategory={ productCategory }
+                            />
+                        </div>
+                    </div>
+                    
                 </div>
                 
-
             </div>
         </>
     )

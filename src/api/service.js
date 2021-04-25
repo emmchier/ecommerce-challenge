@@ -114,8 +114,8 @@ export const getHistory = async (setRedeemData) => {
 
     try {
         const result = await fetch(GET_HISTORY, parameters);
-        const products = await result.json();
-        setRedeemData(products);
+        const data = await result.json();
+        setRedeemData(data);
     } catch (error) {
         console.log('error get history', error);
     }

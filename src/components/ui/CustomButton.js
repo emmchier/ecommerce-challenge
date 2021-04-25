@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const CustomButton = ({ onClick, btnTitle, isHover = true, classes} ) => {
+export const CustomButton = ({ onClick, btnTitle, isHover, classes } ) => {
 
     const [ hover, setIsHover ] = useState();
 
@@ -12,8 +12,7 @@ export const CustomButton = ({ onClick, btnTitle, isHover = true, classes} ) => 
                 : `btn btn-primary custom-btn ${classes}`
             }
             onMouseEnter={() => { setIsHover(isHover) }}
-            onClick={ onClick }
-            >
+            onClick={ onClick }>
             { btnTitle }
         </button>
     )

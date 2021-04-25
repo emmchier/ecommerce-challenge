@@ -9,17 +9,49 @@
         background-color: $disableBackground;
     }
 
-    &.title {
+    &.text.history {
         width: 100px;
-        height: 25px;
-        margin-bottom: 15px;
+        height: 15px;
         background-color: $disableBackground;
+        position: relative;
     }
 
-    &.avatar {
+    &.title {
         width: 100px;
-        height: 100px;
+        height: 15px;
+        margin-bottom: 15px;
+    }
+
+    &.title.history {
+        width: 100px;
+        height: 15px;
+        background-color: $disableBackground !important;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    
+
+    &.avatar {
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
+        background-color: $primaryColor;
+        position: absolute;
+        z-index: 9;
+        top: 4px;
+        left: 15px;
+    }
+
+    &.avatar.history {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: $primaryColor;
+        position: absolute;
+        z-index: 9;
+        top: 4px;
+        left: 15px;
     }
 
     &.thumbnail {
@@ -27,6 +59,22 @@
         height: 20vh;
         background-color: $disableBackground;
     }
+
+    &.thumbnail.history {
+        width: 150px;
+        height: 115px;
+        background-color: $disableBackground;
+    }
+}
+
+.history-info-container {
+    position: absolute !important;
+    right: 60px !important;
+    top: 40px;
+}
+
+.skeleton-row {
+    margin-bottom: 25px !important;
 }
 
 .skeleton-name {
@@ -46,12 +94,24 @@
 
 }
 
+.skeleton-product.skeleton-history {
+    margin-bottom: 20px;
+}
+
 .skeleton-row {
     margin-bottom: 15px;
 
     .skeleton-product {
         width: 100%;
         height: 38vh;
+        padding: 20px;
+        background-color: $primaryLightColor;
+        overflow: hidden;
+        position: relative;
+    }
+    .skeleton-product.skeleton-history {
+        width: 100%;
+        height: 25vh;
         padding: 20px;
         background-color: $primaryLightColor;
         overflow: hidden;

@@ -1,19 +1,16 @@
-import React, { useContext } from 'react';
-import Button from '@material-ui/core/Button';
+import React, { useContext, useState } from 'react';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
-import { CardMedia } from '@material-ui/core';
-import { postReedem } from '../../api/service';
 import { UserContext } from '../contexts/UserContext';
 import buyBlue from '../../assets/buy-blue.svg';
 import coin from '../../assets/icons/coin.svg';
-import Icon from '@material-ui/core/Icon';
 import { CustomRedeemBtn } from './CustomRedeemBtn';
 import { redeemProduct } from '../../actions/redeemProduct';
+import { useFetch } from '../../hooks/useFetch';
+import { SkeletonProduct } from '../skeletons/SkeletonProduct';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide 
@@ -23,10 +20,18 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function RedeemDialog( props ) {
 
-  const { productId, productCost, productName, productImg, productImgHd, clasess } = props;
+  const { 
+    productId, 
+    productCost, 
+    productName, 
+    productCategory, 
+    productImgHd, 
+    clasess,
+    setShowSnack } = props;
+
   const [open, setOpen] = React.useState(false);
 
-  console.log(productImgHd);
+  const { loading } = useFetch();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -44,14 +49,8 @@ export default function RedeemDialog( props ) {
       redeemProduct(user, setUser, points, productCost, productId)
       handleClose();
     };
-    
 
-    // const handleRedeemProduct = () => {
-    //     const refreshPoints = points - productCost
-    //     setUser({ ...user, points: refreshPoints });
-    //     postReedem( productId );
-    // };
-
+    const MainContainer = ({ children }) => <div className="redeem-modal-main-container">{children}</div>;
     const Title = ({ children }) => <div className="redeem-modal-title">{children}</div>;
     const Row = ({ children }) => <div className="row">{children}</div>;
     const Col_6 = ({ children }) => <div className="col-sm-12 col-md-6">{children}</div>;
@@ -62,18 +61,23 @@ export default function RedeemDialog( props ) {
     const Coin = () => <img src={ coin } className="redeem-modal-coin" alt="coin icon" />;
     const CostUnity = () => <p className="redeem-modal-unity">x 1</p>;
     const ProductName = ({ children }) => <h2 className="redeem-modal-product-name">{ children }</h2>;
+    const ProductCategory = ({ children }) => <h4 className="redeem-modal-product-category">{ children }</h4>;
     const CloseIcon = ({ children }) => <div className="redeem-modal-close-icon" onClick={handleClose}>{ children }</div>;
   
   return (
     <div>
-      <CustomRedeemBtn classes={ `btn-product-redeem ${clasess}` } onClick={handleClickOpen} />
+      {
+        productCost < points &&
+        <CustomRedeemBtn classes={ `btn-product-redeem ${clasess}` } onClick={handleClickOpen} />
+      }
       <Dialog
         open={open}
         TransitionComponent={Transition}
         onClose={handleClose}
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description">
-        <CloseIcon><i className="material-icons">close</i></CloseIcon>
+          <MainContainer>
+          <CloseIcon><i className="material-icons">close</i></CloseIcon>
         <DialogTitle id="alert-dialog-title">
           <RedeemContainer>
             <BuyBlueImg></BuyBlueImg>
@@ -83,11 +87,15 @@ export default function RedeemDialog( props ) {
         <DialogContent>
           <Row>
             <Col_6>
-              <ProductImage></ProductImage>
+              { loading ? <SkeletonProduct /> 
+                : <ProductImage></ProductImage>
+              }
+              
             </Col_6>
             <Col_6>
             <DialogContentText id="alert-dialog-description">
             <ProductName>{ productName }</ProductName>
+            <ProductCategory>{ productCategory }</ProductCategory>
             <RedeemContainer>
               <Cost> { productCost } </Cost>
               <Coin></Coin>
@@ -98,6 +106,8 @@ export default function RedeemDialog( props ) {
             </Col_6>
           </Row>
         </DialogContent>
+
+          </MainContainer>
       </Dialog>
     </div>
   );

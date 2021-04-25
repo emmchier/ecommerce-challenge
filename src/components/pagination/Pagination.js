@@ -8,30 +8,31 @@ export const Pagination = ( { isVisible } ) => {
 
     const [ filterVisivility ] = useState(isVisible);
 
-    const { currentPage, productsByPage } = usePagination();
+    const { 
+        productsByPage,
+        currentPage,
+        setCurrentPage } = usePagination();
    
     const { data } = useFetch();
 
-    const handlePage = (current) => {
-     
-        console.log(current);
+    const setPagination = (number) => {
+       setCurrentPage(number);
     };
-    
 
     return (
         <div className="pagination-bar">
             <div className="store__pagination-container align-horizontal d-flex align-items-center">
-                <p className="store__counter-pager">{ productsByPage } of { data.length } products </p>
+                <p className="store__counter-pager">{ productsByPage } of { data.length } <span>products</span></p>
     
                 { filterVisivility && <FilterBar /> }
 
                 <ul className="pagination-nav align-horizontal right-align">
                     <li>
                         {
-                            currentPage == 1 &&
+                            !currentPage == 1 &&
                             <CustomFAB 
                                 iconName={ 'chevron_left' } 
-                                onClickFab={ ()=> { handlePage(1) } }
+                                onClickFab={ ()=> { setPagination(1) } }
                             />
                         }
                         
@@ -39,7 +40,7 @@ export const Pagination = ( { isVisible } ) => {
                     <li>
                         <CustomFAB 
                             iconName={ 'chevron_right' } 
-                            onClickFab={ ()=> { handlePage(2) } }
+                            onClickFab={ ()=> { setPagination(2) } }
                         />
                     </li>
                 </ul>

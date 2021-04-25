@@ -1,4 +1,5 @@
 
+import { useMediaQuery } from 'react-responsive';
 import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ import { UserContext } from '../contexts/UserContext';
 import { ShimmerAnimation } from '../skeletons/ShimmerAnimation';
 import { SkeletonElements } from '../skeletons/SkeletonElements';
 import { Points } from '../user/Points';
+import { CustomFAB } from './CustomFAB';
 import { Overlay } from './Overlay';
 import { SidenavAddPoints } from './SidenavAddPoints';
 
@@ -20,7 +22,9 @@ export const Navbar = () => {
     const showSidebar = () => setShowNav(!showNav);
 
     const { loading } = useFetch();
-    
+
+    const isMobile = useMediaQuery({ query: `(min-width: 760px)` });
+
     return (
         <>
         <SidenavAddPoints 
@@ -52,7 +56,7 @@ export const Navbar = () => {
                         ? 
                         <div className="btn skeleton-name">
                             <ShimmerAnimation />
-                        </div> : <h1> { name } </h1>
+                        </div> : isMobile && <h2 className="navbar__user-name"> { name } </h2>
                     }
                         <Points 
                             points={ points }
@@ -60,6 +64,14 @@ export const Navbar = () => {
                             setBack={ true }
                             actionFab={ ()=> { showSidebar() } }
                         />
+                        {
+                            !isMobile &&
+                            <CustomFAB 
+                                classes={ 'btn-add-res' }
+                                iconName={ 'add' } 
+                                onClickFab={ ()=> { showSidebar() }  }
+                            />
+                        }
                 </div>
             </div>
         </nav>

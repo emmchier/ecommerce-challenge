@@ -7,7 +7,9 @@ import { AppRouter } from './router/AppRouter';
 export const RedeemUp = () => {
 
     const [user, setUser] = useState({});
-    const [filter, setFilter] = useState({});
+    const [filter, setFilter] = useState({
+      price: 'all'
+    });
 
     useEffect(() => {
         getUser(setUser);

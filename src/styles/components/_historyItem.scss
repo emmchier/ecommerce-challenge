@@ -1,0 +1,214 @@
+.history-screen {
+    margin-top: 80px;
+
+    .history-item {
+        
+        .store__product-card {
+            cursor: initial;
+            
+            .store__product-card-body {
+                &:hover {
+                    opacity: 1 !important;   
+                }
+
+                .history-data {
+                    margin: 30px 0;
+                }
+
+                .store__product-card-img {
+                    width: 100%;
+                    margin: 10px 0;
+                }
+
+                .store__product-card-title {
+                    margin-top: 20px !important;
+                    color: $primaryDarkColor;
+                }
+                .store__product-card-category {
+                    color: $primaryColor;
+                    margin-bottom: 10px;
+                }
+            
+            }
+            
+        }
+        .store__product-buy-icon {
+            position: absolute;
+            left: 0 !important; 
+        }
+        
+    }
+
+    .history-header {
+        margin: 30px 0;
+
+        .history-title {
+            font-size: 50px;
+            font-weight: 700 !important;
+            margin-top: 30px;
+            color: $primaryDarkColor;
+        }
+
+        .btn-back-store {
+            text-decoration: none;
+            color: $primaryDarkColor;
+            width: auto !important;
+
+            &:hover {
+                border-color: $primaryColor;
+                color: $primaryColor;
+
+                .custom-fab-btn {
+                    border-color: $primaryColor;
+                    i {
+                        color: $primaryColor;
+                    }
+                }
+                
+
+            }
+
+            .custom-fab-btn {
+                margin: 0;
+                height: 40px;
+                width: 40px;
+                line-height: 40px;
+                border-color: $primaryDarkColor;
+    
+                i {
+                    font-size: 20px;
+                    transform: translateY(-2px) translateX(-3px);
+                    color: $primaryDarkColor;
+                }
+            }
+    
+            span {
+                padding: 18px;
+                
+                font-size: 18px;
+                
+            }
+        }
+        
+    }
+    .btn-see-more-history {
+        .MuiButtonBase-root {
+            position: relative !important;
+            padding: 0;
+            margin: 0;
+    
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: transparent !important;
+            }        
+        }
+
+        .MuiButton-label {
+            font-weight: 500 !important;
+            text-transform: initial;
+            color: $primaryDarkColor;
+
+            
+    
+            &:hover {
+                background-color: transparent !important;
+                text-decoration: underline;
+            }
+    
+            
+        }
+
+    }
+    
+}
+
+/* desk */
+@media only screen and (min-width: $deskXlMin) {
+  
+}
+/* desk notebook*/
+@media only screen and (min-width: $noteXlMin) and (max-width: $noteXlMax) {
+  
+}
+/* desk notebooks más chicas (marhis) */
+@media only screen and (min-width: $noteSmMin) and (max-width: $noteSmMax){
+  
+}
+/* tablet o iPad */
+@media only screen and (min-width: $tabletMin) and (max-width: $tabletMax) {
+
+}
+/* mobile */
+@media only screen and (max-width: $mobMax) {
+
+    .history-title {
+        font-size: 35px !important;
+    }
+    .history-data {
+        margin: 0;
+    }
+    
+    .store__product-card-img {
+        margin: 0;
+    }
+    
+    .store__product-card-title {
+        font-size: 20px;
+    }
+    .store__product-card-category {
+        font-size: 18px;
+    }
+    
+    .store__product-buy-icon {
+        height: 50px;
+        width: 50px;
+    }
+    .btn-see-more-history {
+        .MuiButtonBase-root {
+            position: absolute !important;
+            padding: 0;
+            margin: 0;
+            justify-content: left !important; 
+            width: 100%;
+            transform: translateX(-17px);
+    
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: transparent !important;
+            }        
+        }
+
+        .MuiButton-label {
+            font-weight: 500 !important;
+            text-transform: initial;
+            color: $primaryDarkColor;
+            font-size: 18px !important;
+            
+    
+            &:hover {
+                background-color: transparent !important;
+                text-decoration: underline;
+            }
+    
+            
+        }
+
+    }
+    
+    
+}
+/* mobile iPhone 6 + iPhoneX */
+@media only screen and (min-width: iphoneXMin) and (max-width: iphoneXMax) {
+    
+}
+/* mobile MotoG4 + Galaxy S5 */
+@media only screen and (min-width: $galaxy5Min) and (max-width: $galaxy5Max) {
+    
+}   
+/* galaxy fold + iPhone 5*/
+@media only screen and (min-width: $galaxyMin) and (max-width: $galaxyMax) {
+    
+} 
+

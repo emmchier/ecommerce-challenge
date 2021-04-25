@@ -1,16 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import buyBlue from '../../assets/buy-blue.svg';
 import { UserContext } from '../contexts/UserContext';
 import { Points } from '../user/Points';
 import { ProductRedeemInfo } from './ProductRedeemInfo';
 import { useMediaQuery } from 'react-responsive';
-import { CustomButton } from '../ui/CustomButton';
-import { CustomRedeemBtn } from '../ui/CustomRedeemBtn';
-import { redeemProduct } from '../../actions/redeemProduct';
-import { CustomLinkBtn } from '../ui/CustomLinkBtn';
 import coin from '../../assets/icons/coin.svg';
 import RedeemDialog from '../ui/RedeemDialog';
+import DetailDialog from '../ui/DetailDialog';
 
 export const ProductItem = ( props ) => {
 
@@ -35,7 +31,7 @@ export const ProductItem = ( props ) => {
 
         
         
-        <div className="col-sm-12 col-md-4 col-lg-3"
+        <div className="col-sm-12 col-md-4 col-lg-3 item"
             onMouseEnter={() => { 
                 productCost > userPoints 
                 ? setIsHover(false) : setIsHover(true)
@@ -54,7 +50,8 @@ export const ProductItem = ( props ) => {
                             productCost={ productCost }
                             productName={ productName }
                             productImg={ productImg }
-                            productImgHd={ productImgHd } /> 
+                            productImgHd={ productImgHd }
+                            productCategory={ productCategory } /> 
                         
                 }
                     
@@ -119,19 +116,33 @@ export const ProductItem = ( props ) => {
                                 productImgHd={ productImgHd }
                                 clasess={ 'btn-redeem-res' }
                             />
-                            {/* <CustomRedeemBtn 
-                                classes={ 'btn-redeem-res' } 
-                                onClick={ ()=> { 
-                                    redeemProduct() } } 
-                            /> */}
-                            <CustomLinkBtn productId={ productId } />
+                            <div className="btn-see-more btn-see-more-res">
+                                {/* see more res */}
+                                    <DetailDialog 
+                                        productId={ productId }
+                                        productCost={ productCost }
+                                        productName={ productName }
+                                        productImg={ productImg }
+                                        productImgHd={ productImgHd }
+                                        productCategory={ productCategory }
+                                    />
+                            </div>
+                            
                         </div>
                         
                         </>
                     }
                     </div>
                     <div className="btn-see-more-container">
-                        <CustomLinkBtn productId={ productId } />
+                            {/*  see more low cost */}
+                            <DetailDialog 
+                                productId={ productId }
+                                productCost={ productCost }
+                                productName={ productName }
+                                productImg={ productImg }
+                                productImgHd={ productImgHd }
+                                productCategory={ productCategory }
+                            />  
                     </div>
                     
                     

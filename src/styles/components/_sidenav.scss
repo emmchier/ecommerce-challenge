@@ -149,3 +149,71 @@
         transition: .5s ease-in-out !important;
     }
 }
+
+/* desk */
+@media only screen and (min-width: $deskXlMin) {
+  
+}
+/* desk notebook*/
+@media only screen and (min-width: $noteXlMin) and (max-width: $noteXlMax) {
+  
+}
+/* desk notebooks más chicas (marhis) */
+@media only screen and (min-width: $noteSmMin) and (max-width: $noteSmMax){
+  
+}
+/* tablet o iPad */
+@media only screen and (min-width: $tabletMin) and (max-width: $tabletMax) {
+
+}
+/* mobile */
+@media only screen and (max-width: $mobMax) {
+    .sidenav-points {
+        height: 100vh;
+        background-color: $whiteColor;
+        box-shadow: 2px 0px 5px rgba($color: $primaryDarkColor, $alpha: 5.0);
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75% !important;
+        z-index: 99999 !important;
+        transition: all .5s;
+
+        &.active {
+            right: 0 !important;
+            transition: all .5s !important;
+        }
+    }
+    .sidenav-user-name {
+        font-weight: 300;
+        color: $whiteColor;
+        font-size: 33px !important;
+    }
+
+    .sidenav-header {
+        .store__user-points-container {
+            right: 0 !important;
+            width: auto;
+            justify-content: center;
+
+            h2 {
+                color: red;
+            }
+        }
+
+        
+    
+    }
+}
+/* mobile iPhone 6 + iPhoneX */
+@media only screen and (min-width: iphoneXMin) and (max-width: iphoneXMax) {
+    
+}
+/* mobile MotoG4 + Galaxy S5 */
+@media only screen and (min-width: $galaxy5Min) and (max-width: $galaxy5Max) {
+    
+}   
+/* galaxy fold + iPhone 5*/
+@media only screen and (min-width: $galaxyMin) and (max-width: $galaxyMax) {
+    
+}
