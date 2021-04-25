@@ -4,15 +4,13 @@ export const Overlay = ( { isOpenOverlay, onClickOverlay } ) => {
 
     return (
         <>
-        {
-            isOpenOverlay && 
-            <div 
-                className={ isOpenOverlay ? 'overlay active' : 'overlay' }
-                onClick={ onClickOverlay }
-            >
-
-            </div>
-        }
+            {
+                isOpenOverlay && 
+                <div 
+                    className={ isOpenOverlay ? 'overlay active' : 'overlay' }
+                    onClick={ onClickOverlay }>
+                </div>
+            }
         </>
     )
 }

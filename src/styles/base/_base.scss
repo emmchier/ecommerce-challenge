@@ -25,78 +25,78 @@ button:focus,
 .main-elevation {
     -webkit-box-shadow: 0 8px 17px 2px rgba(26, 25, 25, 0.023), 0 3px 14px 2px rgba(0, 0, 0, 0.064), 0 5px 5px -3px rgba(0, 0, 0, 0.064) !important;
             box-shadow: 0 8px 17px 2px rgba(26, 25, 25, 0.023), 0 3px 14px 2px rgba(0, 0, 0, 0.064), 0 5px 5px -3px rgba(0, 0, 0, 0.064) !important;
+}
+
+.elevation-high {
+  -webkit-box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2) !important;
+          box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2) !important;
+}
+
+.no-elevation {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.full-rounded {
+  border-radius: 20px !important;
+}
+
+.align-horizontal {
+  display: flex;
+  align-items: center;
+}
+
+.custom-btn {
+  height: auto;
+  font-size: 24px;
+  background-color: $disableBackground;
+  border-radius: 25px !important;
+  border: none;
+  padding: 8px 25px 8px 25px !important;
+  color: $primaryColor;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $btnActiveBackground;
+    transition: 0.3s ease-in-out;
+    color: $primaryDarkColor;
   }
 
-  .elevation-high {
-    -webkit-box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2) !important;
-            box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2) !important;
+  &.hover-active:hover {
+    background-color: $secondaryColor;
+    transition: 0.3s ease-in-out;
+    color: $whiteColor;
   }
-  
-  .no-elevation {
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-  }
-  
-  .full-rounded {
-    border-radius: 20px !important;
-  }
+}
 
-  .align-horizontal {
-    display: flex;
-    align-items: center;
-  }
-  
-  .custom-btn {
-    height: auto;
-    font-size: 24px;
-    background-color: $disableBackground;
-    border-radius: 25px !important;
-    border: none;
-    padding: 8px 25px 8px 25px !important;
-    color: $primaryColor;
-  
-    &:hover,
-    &:active,
-    &:focus {
-      background-color: $btnActiveBackground;
-      transition: 0.3s ease-in-out;
-      color: $primaryDarkColor;
-    }
+.custom-fab-btn {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  border-color: $primaryLightColor;
+  border-radius: 50%;
+  color: $primaryLightColor;
+  margin-left: 15px;
 
-    &.hover-active:hover {
-      background-color: $secondaryColor;
-      transition: 0.3s ease-in-out;
-      color: $whiteColor;
-    }
+  &:hover,
+  &:active,
+  &:focus {
+    transition: 0.1s ease-in;
+    border-color: $primaryDarkColor;
+    color: $primaryDarkColor;
+    background-color: transparent;
   }
+}
 
-  .custom-fab-btn {
-    width: 48px;
-    height: 48px;
-    line-height: 48px;
-    border-color: $primaryLightColor;
-    border-radius: 50%;
-    color: $primaryLightColor;
-    margin-left: 15px;
-
-    &:hover,
-    &:active,
-    &:focus {
-      transition: 0.1s ease-in;
-      border-color: $primaryDarkColor;
-      color: $primaryDarkColor;
-      background-color: transparent;
-    }
-  }
-
-  .counter-points {
-    height: auto;
-    font-size: 24px;
-    border-radius: 25px !important;
-    border: none;
-    padding: 8px 25px 8px 25px !important;
-    color: $primaryColor;
-  }
+.counter-points {
+  height: auto;
+  font-size: 24px;
+  border-radius: 25px !important;
+  border: none;
+  padding: 8px 25px 8px 25px !important;
+  color: $primaryColor;
+}
 
 
   

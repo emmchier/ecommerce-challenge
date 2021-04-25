@@ -59,27 +59,11 @@ header {
     position: absolute;
     bottom: 70px;
   }
-
 }
 
-/* desk */
-@media only screen and (min-width: $deskXlMin) {
-  
-}
-/* desk notebook*/
-@media only screen and (min-width: $noteXlMin) and (max-width: $noteXlMax) {
-  
-}
-/* desk notebooks más chicas (marhis) */
-@media only screen and (min-width: $noteSmMin) and (max-width: $noteSmMax){
-  
-}
-/* tablet o iPad */
-@media only screen and (min-width: $tabletMin) and (max-width: $tabletMax) {
-
-}
 /* mobile */
 @media only screen and (max-width: $mobMax) {
+  
   header {
     width: 100%;
     height: 20vh !important;
@@ -92,19 +76,6 @@ header {
     font-size: 40px !important;
     bottom: 40px !important;
   }
-  
-}
-/* mobile iPhone 6 + iPhoneX */
-@media only screen and (min-width: iphoneXMin) and (max-width: iphoneXMax) {
-    
-}
-/* mobile MotoG4 + Galaxy S5 */
-@media only screen and (min-width: $galaxy5Min) and (max-width: $galaxy5Max) {
-    
-}   
-/* galaxy fold + iPhone 5*/
-@media only screen and (min-width: $galaxyMin) and (max-width: $galaxyMax) {
-    
 } 
  
 

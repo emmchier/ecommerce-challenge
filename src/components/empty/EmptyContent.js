@@ -1,8 +1,10 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 import EmptyIcon from '../../assets/empty-icon.svg';
 
 export const EmptyContent = () => {
+
     return (
         <>
             <div className="row empty-container">

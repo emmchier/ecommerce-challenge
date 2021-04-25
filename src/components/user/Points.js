@@ -1,4 +1,3 @@
-import { Tooltip } from '@material-ui/core';
 import React, { useState } from 'react';
 
 import coin from '../../assets/icons/coin.svg';
@@ -15,7 +14,7 @@ export const Points = ({ points, setBack, isHover, actionFab }) => {
 
     return (
         
-      <div 
+        <div 
             className={
                 background ?
                 "store__user-points-container counter-points full-rounded no-elevation d-flex align-items-center"
@@ -25,24 +24,18 @@ export const Points = ({ points, setBack, isHover, actionFab }) => {
             onMouseEnter={ ()=> {
                 isHover && setShowAdd(true) } }
             onMouseLeave={ ()=> { setShowAdd(false) } }>
-
-                {
-                    loading ? <div className="btn skeleton-points"></div> : <h2> { points } </h2>
-                }
-                <img src={ coin } className="coin-icon" alt="coin icon"/>
-                {
-                    showAdd && 
-                   
-                    <CustomFAB 
-                        iconName={ 'add' } 
-                        onClickFab={ actionFab }
-                    />
-                    
-                   
-                }
-                
-        </div>
- 
-        
+            {
+                loading ? <div className="btn skeleton-points"></div> : <h2> { points } </h2>
+            }
+            <img src={ coin } className="coin-icon" alt="coin icon"/>
+            {
+                showAdd && 
+            
+                <CustomFAB 
+                    iconName={ 'add' } 
+                    onClickFab={ actionFab }
+                />
+            }
+        </div>    
     )
 }

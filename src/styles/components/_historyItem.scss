@@ -7,6 +7,7 @@
             cursor: initial;
             
             .store__product-card-body {
+
                 &:hover {
                     opacity: 1 !important;   
                 }
@@ -24,19 +25,18 @@
                     margin-top: 20px !important;
                     color: $primaryDarkColor;
                 }
+
                 .store__product-card-category {
                     color: $primaryColor;
                     margin-bottom: 10px;
                 }
-            
             }
-            
         }
+
         .store__product-buy-icon {
             position: absolute;
             left: 0 !important; 
         }
-        
     }
 
     .history-header {
@@ -64,8 +64,6 @@
                         color: $primaryColor;
                     }
                 }
-                
-
             }
 
             .custom-fab-btn {
@@ -89,9 +87,10 @@
                 
             }
         }
-        
     }
+
     .btn-see-more-history {
+
         .MuiButtonBase-root {
             position: relative !important;
             padding: 0;
@@ -109,42 +108,21 @@
             text-transform: initial;
             color: $primaryDarkColor;
 
-            
-    
             &:hover {
                 background-color: transparent !important;
                 text-decoration: underline;
-            }
-    
-            
+            }  
         }
-
     }
-    
 }
 
-/* desk */
-@media only screen and (min-width: $deskXlMin) {
-  
-}
-/* desk notebook*/
-@media only screen and (min-width: $noteXlMin) and (max-width: $noteXlMax) {
-  
-}
-/* desk notebooks más chicas (marhis) */
-@media only screen and (min-width: $noteSmMin) and (max-width: $noteSmMax){
-  
-}
-/* tablet o iPad */
-@media only screen and (min-width: $tabletMin) and (max-width: $tabletMax) {
-
-}
 /* mobile */
 @media only screen and (max-width: $mobMax) {
 
     .history-title {
         font-size: 35px !important;
     }
+
     .history-data {
         margin: 0;
     }
@@ -156,6 +134,7 @@
     .store__product-card-title {
         font-size: 20px;
     }
+
     .store__product-card-category {
         font-size: 18px;
     }
@@ -164,7 +143,9 @@
         height: 50px;
         width: 50px;
     }
+
     .btn-see-more-history {
+
         .MuiButtonBase-root {
             position: absolute !important;
             padding: 0;
@@ -186,29 +167,11 @@
             color: $primaryDarkColor;
             font-size: 18px !important;
             
-    
             &:hover {
                 background-color: transparent !important;
                 text-decoration: underline;
             }
-    
-            
         }
-
     }
-    
-    
 }
-/* mobile iPhone 6 + iPhoneX */
-@media only screen and (min-width: iphoneXMin) and (max-width: iphoneXMax) {
-    
-}
-/* mobile MotoG4 + Galaxy S5 */
-@media only screen and (min-width: $galaxy5Min) and (max-width: $galaxy5Max) {
-    
-}   
-/* galaxy fold + iPhone 5*/
-@media only screen and (min-width: $galaxyMin) and (max-width: $galaxyMax) {
-    
-} 
 

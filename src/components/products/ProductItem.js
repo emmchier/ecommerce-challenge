@@ -1,12 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
+
 import buyBlue from '../../assets/buy-blue.svg';
 import { UserContext } from '../contexts/UserContext';
 import { Points } from '../user/Points';
 import { ProductRedeemInfo } from './ProductRedeemInfo';
 import { useMediaQuery } from 'react-responsive';
-import coin from '../../assets/icons/coin.svg';
 import RedeemDialog from '../ui/RedeemDialog';
 import DetailDialog from '../ui/DetailDialog';
+
+import coin from '../../assets/icons/coin.svg';
 
 export const ProductItem = ( props ) => {
 
@@ -23,14 +25,11 @@ export const ProductItem = ( props ) => {
 
     const [isHover, setIsHover] = useState(false);
 
-    const { user, setUser } = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     const { points: userPoints } = user;
     
-    return (
-
-        
-        
+    return (      
         <div className="col-sm-12 col-md-4 col-lg-3 item"
             onMouseEnter={() => { 
                 productCost > userPoints 
@@ -52,9 +51,7 @@ export const ProductItem = ( props ) => {
                             productImg={ productImg }
                             productImgHd={ productImgHd }
                             productCategory={ productCategory } /> 
-                        
-                }
-                    
+                }        
                 <div className="
                     store__product-card 
                     main-elevation 
@@ -69,8 +66,10 @@ export const ProductItem = ( props ) => {
                             </div>
                         }
                     {
-                        productCost > userPoints ? 
-                        <Points points={ `You need ${ productCost - userPoints }` } /> : 
+                        productCost > userPoints 
+                        ? 
+                        <Points points={ `You need ${ productCost - userPoints }` } /> 
+                        : 
                         <img 
                             src={ buyBlue } 
                             className="store__product-buy-icon" 
@@ -105,19 +104,17 @@ export const ProductItem = ( props ) => {
                             { productName } 
                         </p>
                         {   
-                        !isMobile &&
-                        <>
-                        <div classes="footer-actions-container">
-                            <RedeemDialog
-                                productId={ productId }
-                                productCost={ productCost }
-                                productName={ productName }
-                                productImg={ productImg }
-                                productImgHd={ productImgHd }
-                                clasess={ 'btn-redeem-res' }
-                            />
-                            <div className="btn-see-more btn-see-more-res">
-                                {/* see more res */}
+                            !isMobile &&
+                            <div classes="footer-actions-container">
+                                <RedeemDialog
+                                    productId={ productId }
+                                    productCost={ productCost }
+                                    productName={ productName }
+                                    productImg={ productImg }
+                                    productImgHd={ productImgHd }
+                                    clasess={ 'btn-redeem-res' }
+                                />
+                                <div className="btn-see-more btn-see-more-res">
                                     <DetailDialog 
                                         productId={ productId }
                                         productCost={ productCost }
@@ -126,15 +123,11 @@ export const ProductItem = ( props ) => {
                                         productImgHd={ productImgHd }
                                         productCategory={ productCategory }
                                     />
+                                </div>
                             </div>
-                            
+                        }
                         </div>
-                        
-                        </>
-                    }
-                    </div>
-                    <div className="btn-see-more-container">
-                            {/*  see more low cost */}
+                        <div className="btn-see-more-container">
                             <DetailDialog 
                                 productId={ productId }
                                 productCost={ productCost }
@@ -143,14 +136,10 @@ export const ProductItem = ( props ) => {
                                 productImgHd={ productImgHd }
                                 productCategory={ productCategory }
                             />  
+                        </div>
                     </div>
-                    
-                    
-                    </div>
-                    
                 </div>
             </div>
-            
         </div>
     )
 }

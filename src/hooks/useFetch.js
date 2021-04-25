@@ -3,7 +3,7 @@ import { getProducts } from "../api/service";
 
 export const useFetch = () => {
    
-    const [state, setState] = useState({
+    const [ state, setState ] = useState({
         data: [],
         loading: true
     });
@@ -19,5 +19,4 @@ export const useFetch = () => {
     }, []);
 
     return state;
-
 }

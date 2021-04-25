@@ -1,5 +1,6 @@
-import React from 'react'
-import { SkeletonProduct } from './SkeletonProduct'
+import React from 'react';
+
+import { SkeletonProduct } from './SkeletonProduct';
 
 export const SkeletonRow = () => {
     return (

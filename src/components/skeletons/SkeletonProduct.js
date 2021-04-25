@@ -1,6 +1,7 @@
-import React from 'react'
-import { ShimmerAnimation } from './ShimmerAnimation'
-import { SkeletonElements } from './SkeletonElements'
+import React from 'react';
+
+import { ShimmerAnimation } from './ShimmerAnimation';
+import { SkeletonElements } from './SkeletonElements';
 
 export const SkeletonProduct = () => {
     return (
@@ -12,7 +13,6 @@ export const SkeletonProduct = () => {
                     <SkeletonElements type="text" />
                     <ShimmerAnimation />
                 </div>
-               
             </div>
         </>
     )

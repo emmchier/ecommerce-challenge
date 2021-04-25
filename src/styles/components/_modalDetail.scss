@@ -7,6 +7,7 @@
 .detail-dialog-description {
     margin: 20px 0;
 }
+
 .rate-icon {
     margin: 5px;
     font-size: 30px;
@@ -76,9 +77,8 @@
 
 /* mobile */
 @media only screen and (max-width: $mobMax) {
+    
     .rate-icon {
-   
         font-size: 20px;
-        
     }
 }

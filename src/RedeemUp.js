@@ -7,6 +7,7 @@ import { AppRouter } from './router/AppRouter';
 export const RedeemUp = () => {
 
     const [user, setUser] = useState({});
+
     const [filter, setFilter] = useState({
       price: 'all'
     });
@@ -16,12 +17,10 @@ export const RedeemUp = () => {
     }, []);
 
     return (
-
       <UserContext.Provider value={ { user, setUser } }>
         <FilterContext.Provider value={ { filter, setFilter } }>
           <AppRouter />
         </FilterContext.Provider>
       </UserContext.Provider>
-
     )
 }

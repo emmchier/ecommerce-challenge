@@ -44,7 +44,6 @@ export const getProducts = async() => {
     try {
         const result = await fetch(GET_PRODUCTS, parameters);
         const data = await result.json();
-        console.log(data);
     
         const products = data.map( product => {
             return {

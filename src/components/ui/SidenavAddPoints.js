@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+
 import { Link } from 'react-router-dom';
 import { postPoints } from '../../api/service';
 import { UserContext } from '../contexts/UserContext';
@@ -9,12 +10,14 @@ import { useMediaQuery } from 'react-responsive';
 export const SidenavAddPoints = ( { isOpenSidenav, onClickClose } ) => {
 
     const { user, setUser } = useContext( UserContext );
+
     const { name, points } = user;
+
     const isMobile = useMediaQuery({ query: `(min-width: 760px)` });
 
     let amount = 0;
 
-    const handleAddPoints = (newAmount) => {
+    const handleAddPoints = ( newAmount ) => {
         const refresh = points + newAmount;
         setUser({ ...user, points: refresh });
         postPoints(amount, points, amount);
@@ -34,7 +37,6 @@ export const SidenavAddPoints = ( { isOpenSidenav, onClickClose } ) => {
                                 !isMobile &&
                                 <h2 className="sidenav-user-name">{ name } </h2>
                             }
-                            
                             <p>Your coins</p>
                             <Points 
                                 points={ points }
@@ -69,7 +71,7 @@ export const SidenavAddPoints = ( { isOpenSidenav, onClickClose } ) => {
                         to="/my-history"
                         onClick={ onClickClose }>
                         <p>Check my history</p>
-                        <i class="material-icons">chevron_right</i>
+                        <i className="material-icons">chevron_right</i>
                     </Link>
                 </div>
             </div>

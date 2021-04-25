@@ -1,28 +1,25 @@
 import React, { useContext } from 'react';
+
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-
-import coin from '../../assets/icons/coin.svg';
 import { UserContext } from '../contexts/UserContext';
 
-export default function DetailDialog(props) {
+import coin from '../../assets/icons/coin.svg';
 
-  const { 
-    productId, 
+export default function DetailDialog( props ) {
+
+  const {  
     productCost, 
     productName, 
     productCategory, 
-    productImgHd, 
-    clasess } = props;
+    productImgHd } = props;
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState( false );
   const [scroll, setScroll] = React.useState('paper');
 
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const { points } = user;
 
@@ -45,17 +42,11 @@ export default function DetailDialog(props) {
     }
   }, [open]);
 
-  const MainContainer = ({ children }) => <div className="redeem-modal-main-container">{children}</div>;
-  const Title = ({ children }) => <div className="redeem-modal-title">{children}</div>;
   const ProductImage = () => <img src={ productImgHd } className="detail-dialog-img" alt="product image"/>;
   const RedeemContainer = ({ children }) => <div className="d-flex align-items-center"> { children } </div>;
   const Cost = ({ children }) => <p className="detail-dialog-cost"> { children } </p>;
   const Coin = () => <img src={ coin } className="redeem-modal-coin" alt="coin icon" />;
-  const CostUnity = () => <p className="redeem-modal-unity">points</p>;
-  const ProductName = ({ children }) => <h2 className="redeem-modal-product-name">{ children }</h2>;
-  const ProductCategory = ({ children }) => <h4 className="redeem-modal-product-category">{ children }</h4>;
   const CloseIcon = ({ children }) => <div className="redeem-modal-close-icon" onClick={handleClose}>{ children }</div>;
-
 
   return (
     <div>
@@ -66,7 +57,6 @@ export default function DetailDialog(props) {
         scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description">
-        
         <DialogContent dividers={scroll === 'paper'}>
           <DialogContentText
             id="scroll-dialog-description">
@@ -102,10 +92,8 @@ export default function DetailDialog(props) {
                 <div className="detail-dialog-still-points"> { points } </div>
                 <Coin></Coin>
               </RedeemContainer>
-              
           </DialogContentText>
         </DialogContent>
-
       </Dialog>
     </div>
   );

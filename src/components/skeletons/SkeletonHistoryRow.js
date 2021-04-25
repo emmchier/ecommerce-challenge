@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { SkeletonHistoryProduct } from './SkeletonHistoryProduct';
 
 export const SkeletonHistoryRow = () => {

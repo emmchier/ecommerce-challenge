@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShimmerAnimation } from './ShimmerAnimation';
+
 import { SkeletonRow } from './SkeletonRow';
 
 export const SkeletonGrid = () => {

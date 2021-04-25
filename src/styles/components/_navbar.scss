@@ -11,7 +11,7 @@
 }
 
 .navbar__container-less {
-    width: 1320px;
+    width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 
@@ -19,7 +19,6 @@
         width: 35px;
         padding: 15px 0;
     }
-
 }
 
 .nav-link {
@@ -64,24 +63,9 @@
    }
 }
 
-/* desk */
-@media only screen and (min-width: $deskXlMin) {
-  
-}
-/* desk notebook*/
-@media only screen and (min-width: $noteXlMin) and (max-width: $noteXlMax) {
-  
-}
-/* desk notebooks más chicas (marhis) */
-@media only screen and (min-width: $noteSmMin) and (max-width: $noteSmMax){
-  
-}
-/* tablet o iPad */
-@media only screen and (min-width: $tabletMin) and (max-width: $tabletMax) {
-
-}
 /* mobile */
 @media only screen and (max-width: $mobMax) {
+
     .navbar__container-less {
         margin: 0 auto;
         padding: 0 20px;
@@ -90,52 +74,38 @@
             width: 35px;
             padding: 15px 0;
         }
-    
     }
+
     .nav-link {
         padding-right: 0 !important;
         right: 20px !important;
     }
-  nav {
-    -webkit-box-shadow: 0 8px 17px 2px rgba(26, 25, 25, 0.023), 0 3px 14px 2px rgba(0, 0, 0, 0.064), 0 5px 5px -3px rgba(0, 0, 0, 0.064) !important;
-    box-shadow: 0 8px 17px 2px rgba(26, 25, 25, 0.023), 0 3px 14px 2px rgba(0, 0, 0, 0.064), 0 5px 5px -3px rgba(0, 0, 0, 0.064) !important;
-  }
 
-  .navbar__user-points-container .store__user-points-container {
-    background-color: $disableBackground !important;
-    margin: 0 !important;
-    padding: 5px 10px !important;
-
-    .navbar__user-name {
-        margin-left: 5px;
+    nav {
+        -webkit-box-shadow: 0 8px 17px 2px rgba(26, 25, 25, 0.023), 0 3px 14px 2px rgba(0, 0, 0, 0.064), 0 5px 5px -3px rgba(0, 0, 0, 0.064) !important;
+        box-shadow: 0 8px 17px 2px rgba(26, 25, 25, 0.023), 0 3px 14px 2px rgba(0, 0, 0, 0.064), 0 5px 5px -3px rgba(0, 0, 0, 0.064) !important;
     }
-    
-   .custom-fab-btn {
-        display: none;
-   }
 
-   
-}
-.btn-add-res {
-    border-color: $secondaryColor !important;
+    .navbar__user-points-container .store__user-points-container {
+        background-color: $disableBackground !important;
+        margin: 0 !important;
+        padding: 5px 10px !important;
 
-    i {
-        color: $secondaryColor !important;
-        transform: translateX(-1px);
+        .navbar__user-name {
+            margin-left: 5px;
+        }
+        
+        .custom-fab-btn {
+                display: none;
+        }
     }
-   
-}
 
+    .btn-add-res {
+        border-color: $secondaryColor !important;
+
+        i {
+            color: $secondaryColor !important;
+            transform: translateX(-1px);
+        }
+    }
 }
-/* mobile iPhone 6 + iPhoneX */
-@media only screen and (min-width: iphoneXMin) and (max-width: iphoneXMax) {
-    
-}
-/* mobile MotoG4 + Galaxy S5 */
-@media only screen and (min-width: $galaxy5Min) and (max-width: $galaxy5Max) {
-    
-}   
-/* galaxy fold + iPhone 5*/
-@media only screen and (min-width: $galaxyMin) and (max-width: $galaxyMax) {
-    
-} 
