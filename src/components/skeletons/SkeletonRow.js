@@ -7,7 +7,7 @@ export const SkeletonRow = () => {
         <>
             <div className="row skeleton-row">
                 {
-                    [...new Array(4)].map((n) => <SkeletonProduct key={ n } />)
+                    [...new Array(4)].map((n, key) => <SkeletonProduct key={ key } />)
                 }
             </div>
         </>

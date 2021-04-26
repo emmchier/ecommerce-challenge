@@ -42,7 +42,7 @@ export default function DetailDialog( props ) {
     }
   }, [open]);
 
-  const ProductImage = () => <img src={ productImgHd } className="detail-dialog-img" alt="product image"/>;
+  const ProductImage = () => <img src={ productImgHd } className="detail-dialog-img" alt="pic representing product"/>;
   const RedeemContainer = ({ children }) => <div className="d-flex align-items-center"> { children } </div>;
   const Cost = ({ children }) => <p className="detail-dialog-cost"> { children } </p>;
   const Coin = () => <img src={ coin } className="redeem-modal-coin" alt="coin icon" />;
@@ -67,7 +67,7 @@ export default function DetailDialog( props ) {
               <h2 className="detail-dialog-product-name"> { productName } </h2>
               <div className="d-flex align-items-center">
                 {
-                  [...new Array(4)].map((n) => <i key={ n } className="material-icons rate-icon">star_purple500</i>)
+                  [...new Array(4)].map((n, key) => <i key={ key } className="material-icons rate-icon">star_purple500</i>)
                 }
                 <p className="detail-dialog-text detail-dialog-opinions">4 Opinions</p>
               </div>

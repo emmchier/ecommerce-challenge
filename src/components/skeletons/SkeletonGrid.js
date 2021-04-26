@@ -7,7 +7,7 @@ export const SkeletonGrid = () => {
     return (
         <div className="skeleton-wrapper">
             {
-                [...new Array(4)].map((n) => <SkeletonRow key={ n } />)
+                [...new Array(4)].map((n, key) => <SkeletonRow key={ key } />)
             }
         </div>
     )

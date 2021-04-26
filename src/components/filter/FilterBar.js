@@ -41,7 +41,8 @@ export const FilterBar = () => {
 
     useEffect(() => {
         handleFilters();
-    }, [filter]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     function handleFilterByType(type) {
         const newData = { ...filter, price: type };

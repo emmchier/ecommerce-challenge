@@ -62,7 +62,7 @@ export const ProductItem = ( props ) => {
                             !isMobile &&
                             <div className="points-container">
                                 <p className="redeem-cost"> { productCost } </p>
-                                <img src={ coin } className="coin-icon" alt="coin icon"/>
+                                <img src={ coin } className="coin-icon" alt="show redeem product"/>
                             </div>
                         }
                     {
@@ -85,7 +85,7 @@ export const ProductItem = ( props ) => {
                                 animate__fadeInUp 
                                 animate__faster 
                                 animate__delay-0.2s" 
-                            alt="product image"
+                            alt="pic representing product"
                         />
                         <p className="
                             store__product-card-category 

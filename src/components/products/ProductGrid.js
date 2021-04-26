@@ -42,9 +42,9 @@ export const ProductGrid = () => {
                 :
                 <div className="row">
                     {   
-                        productList.map( prod => (
+                        productList.map( (prod, key) => (
                             <ProductItem
-                                key={ prod.id }
+                                key={ key }
                                 { ...prod }
                             />
                         ))

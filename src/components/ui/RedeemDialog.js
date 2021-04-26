@@ -54,8 +54,8 @@ export default function RedeemDialog( props ) {
   const MainContainer = ({ children }) => <div className="redeem-modal-main-container">{children}</div>;
   const Title = ({ children }) => <div className="redeem-modal-title">{children}</div>;
   const Row = ({ children }) => <div className="row">{children}</div>;
-  const Col_6 = ({ children }) => <div className="col-sm-12 col-md-6">{children}</div>;
-  const ProductImage = () => <img src={ productImgHd } className="redeem-modal-img" alt="product image"/>;
+  const Col = ({ children }) => <div className="col-sm-12 col-md-6">{children}</div>;
+  const ProductImage = () => <img src={ productImgHd } className="redeem-modal-img" alt="pic representing product"/>;
   const BuyBlueImg = () => <img src={ buyBlue } className="store__product-buy-icon redeem-modal-buy-blue" alt="buy blue icon"/>;
   const RedeemContainer = ({ children }) => <div className="d-flex align-items-center"> { children } </div>;
   const Cost = ({ children }) => <p className="redeem-modal-cost"> { children } </p>;
@@ -87,12 +87,12 @@ export default function RedeemDialog( props ) {
             </DialogTitle>
             <DialogContent>
               <Row>
-                <Col_6>
+                <Col>
                   { loading ? <SkeletonProduct /> 
                     : <ProductImage></ProductImage>
                   }
-                </Col_6>
-                <Col_6>
+                </Col>
+                <Col>
                 <DialogContentText id="alert-dialog-description">
                 <ProductName>{ productName }</ProductName>
                 <ProductCategory>{ productCategory }</ProductCategory>
@@ -103,7 +103,7 @@ export default function RedeemDialog( props ) {
                 </RedeemContainer>
               </DialogContentText>
               <CustomRedeemBtn classes={ 'redeem-modal-action' } onClick={hanbleRedeemOk} />
-                </Col_6>
+                </Col>
               </Row>
             </DialogContent>
           </MainContainer>

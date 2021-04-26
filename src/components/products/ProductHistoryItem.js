@@ -35,7 +35,7 @@ export const ProductHistoryItem = (props) => {
                                                 animate__fadeInUp 
                                                 animate__faster 
                                                 animate__delay-0.2s" 
-                                            alt="product image"
+                                            alt={ productName }
                                         />
                                     </div>
                                     <div className="col-sm col-md-6">
