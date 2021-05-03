@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import buyWhite from '../../assets/buy-white.svg';
 import RedeemDialog from '../ui/RedeemDialog';
@@ -16,8 +16,6 @@ export const ProductRedeemInfo = ( props ) => {
         productImg,
         productImgHd
     } = props;
-
-    const { setShowSnack } = useState(false);
 
     return (
         <>
@@ -40,7 +38,6 @@ export const ProductRedeemInfo = ( props ) => {
                             productImg={ productImg }
                             productImgHd={ productImgHd }
                             productCategory={ productCategory }
-                            setShowSnack={ setShowSnack }
                         />
                     </div>
                     <div className="btn-see-more">

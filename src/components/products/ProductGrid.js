@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { useFetch } from '../../hooks/useFetch';
-import { usePagination } from '../../hooks/usePagination';
 import { SkeletonGrid } from '../skeletons/SkeletonGrid';
 import { ProductItem } from './ProductItem';
 import { useMediaQuery } from 'react-responsive';
@@ -12,9 +11,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 export const ProductGrid = () => {
 
-    const { productList } = usePagination();
-
-    const { loading } = useFetch();
+    const { data, loading } = useFetch();
 
     const isMobile = useMediaQuery({ query: `(min-width: 760px)` });
     
@@ -30,7 +27,7 @@ export const ProductGrid = () => {
                     margin={ 25 } 
                     nav>
                     {   
-                        productList.map( prod => (
+                        data.map( prod => (
                             
                             <ProductItem
                                 key={ prod.id }
@@ -42,7 +39,7 @@ export const ProductGrid = () => {
                 :
                 <div className="row">
                     {   
-                        productList.map( (prod, key) => (
+                        data.map( (prod, key) => (
                             <ProductItem
                                 key={ key }
                                 { ...prod }

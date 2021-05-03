@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-
-import { Pagination } from '../pagination/Pagination';
 import { ProductGrid } from '../products/ProductGrid';
 
 export const StoreScreen = () => {
@@ -21,7 +19,6 @@ export const StoreScreen = () => {
                     </div>
                 </header>
                 <div className="container">
-                    <Pagination isVisible={ true } />
                     <div>
                         {
                             products.map( prod => 
@@ -31,7 +28,6 @@ export const StoreScreen = () => {
                             )
                         }
                     </div>
-                    <Pagination />
                 </div>
             </section>
         </>
