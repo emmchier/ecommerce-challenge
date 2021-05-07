@@ -3,8 +3,6 @@ import { ProductGrid } from '../products/ProductGrid';
 
 export const StoreScreen = () => {
 
-    const [ products ] = useState( [ '' ] );
-
     return (
         <>
             <section className="store-screen animate__animated animate__fadeIn">
@@ -19,15 +17,9 @@ export const StoreScreen = () => {
                     </div>
                 </header>
                 <div className="container">
-                    <div>
-                        {
-                            products.map( prod => 
-                                <ProductGrid 
-                                    key={ prod }
-                                    category={ prod } />
-                            )
-                        }
-                    </div>
+                
+                    <ProductGrid />
+                       
                 </div>
             </section>
         </>
